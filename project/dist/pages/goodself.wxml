@@ -1,0 +1,4 @@
+
+  <view>
+    <text>{{saler}}的清单</text>
+  </view>

@@ -1,0 +1,27 @@
+// 2017-10-12 Stanley Chen
+
+<style lang="less">
+.goods {
+  display: flex;
+  flex-direction: columns;
+}
+</style>
+
+<template>
+  <view>
+    <text>{{saler}}的清单</text>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '二手书资源平台'
+  }
+  data = {
+    saler: '刘琦'
+  }
+  onLoad() { }
+}
+</script>

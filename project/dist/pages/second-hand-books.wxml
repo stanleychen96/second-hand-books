@@ -1,0 +1,18 @@
+
+  <view>
+    <view class="title userinfo">
+      <text>{{title}}</text>
+    </view>
+
+    <view class="view">
+      <view>转到下一页→</view>
+    </view>
+
+    <view class="columncenter">
+      <image class="imgtitle" src="{{imgtitle}}" mode="scaleToFill">{{welcome}}</image>
+    </view>
+
+    <view>
+      <button class="loginbutton" bindtap="login" loading type="primary">授权登录</button>
+    </view>
+  </view>

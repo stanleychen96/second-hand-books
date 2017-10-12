@@ -1,0 +1,100 @@
+<style lang="less">
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columncenter {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10%;
+}
+
+.title {
+  color: green;
+  margin-top: 10%;
+  margin-bottom: 20%;
+  font-size: 0.8rem;
+}
+
+.picture {
+  display: flex;
+}
+
+.loginbutton {
+  margin-left: 23%;
+  margin-right: 23%;
+  margin-top: 25%
+}
+
+.imgtitle {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  height: 13rem;
+  width: 13rem;
+}
+
+.view {
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.5rem;
+  color: gray;
+}
+</style>
+
+<template>
+  <view>
+    <view class="title userinfo">
+      <text>{{title}}</text>
+    </view>
+
+    <view class="view">
+      <view>转到下一页→</view>
+    </view>
+
+    <view class="columncenter">
+      <image class="imgtitle" src="{{imgtitle}}" mode="scaleToFill">{{welcome}}</image>
+    </view>
+
+    <view>
+      <button class="loginbutton" @tap="button" loading="loading" bindtap="login" type="primary">授权登录</button>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '二手书资源平台'
+  }
+
+  data = {
+    title: '登入认证',
+    welcome: '',
+    imgtitle: '../images/WechatIMG165.jpeg'
+  }
+
+  methods = {
+    login() {
+      console.log('睡觉吧，狗命没了')
+    },
+    button() {
+      wepy.navigateTo({
+        url: './goodself.wpy'
+      })
+    }
+  }
+
+  onLoad() { }
+}
+</script>
