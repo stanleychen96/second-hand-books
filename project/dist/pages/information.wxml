@@ -1,0 +1,17 @@
+
+  <view class="img">
+    <view class="center space">
+
+      <view class="size" scr="{{photo}}"/>
+
+      <view class="center">
+        <text>昵称:{{nickname}}</text>
+        <text>性别:{{sex}}</text>
+        <text>联系电话:{{phone}}</text>
+        <text>QQ:{{qq}}</text>
+        <view class=""/>
+        <view class="" scr="{{}}"/>
+      </view>
+
+    </view>
+  </view>

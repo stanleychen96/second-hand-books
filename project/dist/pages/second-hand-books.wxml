@@ -1,11 +1,11 @@
 
-  <view>
+  <view class="img">
     <view class="title userinfo">
       <text>{{title}}</text>
     </view>
 
     <view class="view">
-      <view>转到下一页→</view>
+      <view bindtap="tap">转到第3页→</view>
     </view>
 
     <view class="columncenter">
@@ -13,6 +13,6 @@
     </view>
 
     <view>
-      <button class="loginbutton" bindtap="login" loading type="primary">授权登录</button>
+      <button class="loginbutton" bindtap="button" loading type="primary">授权登录</button>
     </view>
   </view>

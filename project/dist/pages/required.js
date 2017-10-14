@@ -34,23 +34,17 @@ var Index = function (_wepy$page) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      navigationBarTitleText: '二手书资源平台'
+      navigationBarTitleText: '觅书处'
     }, _this.data = {
-      title: '登入认证',
-      welcome: '',
-      imgtitle: '../images/WechatIMG165.jpeg'
+      book: '../images/WechatIMG165.jpeg',
+      focus: false,
+      inputValue: '',
+      placeholder: ' 例如：你的名字'
+
     }, _this.methods = {
-      login: function login() {
-        console.log('睡觉吧，狗命没了');
-      },
-      button: function button() {
-        _wepy2.default.navigateTo({
-          url: './user?data=1&a=2'
-        });
-      },
-      tap: function tap() {
-        _wepy2.default.navigateTo({
-          url: './user'
+      bindButtonTap: function bindButtonTap() {
+        this.setData({
+          focus: true
         });
       }
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -58,13 +52,17 @@ var Index = function (_wepy$page) {
 
   _createClass(Index, [{
     key: 'onLoad',
-    value: function onLoad() {}
+    value: function onLoad(option) {
+      // console.log(option)
+      // let self = this
+      // self.a = option.a
+    }
   }]);
 
   return Index;
 }(_wepy2.default.page);
 
 
-Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/second-hand-books'));
+Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/required'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlY29uZC1oYW5kLWJvb2tzLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJ0aXRsZSIsIndlbGNvbWUiLCJpbWd0aXRsZSIsIm1ldGhvZHMiLCJsb2dpbiIsImNvbnNvbGUiLCJsb2ciLCJidXR0b24iLCJuYXZpZ2F0ZVRvIiwidXJsIiwidGFwIiwicGFnZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQ0E7Ozs7Ozs7Ozs7OztJQUNxQkEsSzs7Ozs7Ozs7Ozs7Ozs7b0xBQ25CQyxNLEdBQVM7QUFDUEMsOEJBQXdCO0FBRGpCLEssUUFJVEMsSSxHQUFPO0FBQ0xDLGFBQU8sTUFERjtBQUVMQyxlQUFTLEVBRko7QUFHTEMsZ0JBQVU7QUFITCxLLFFBTVBDLE8sR0FBVTtBQUNSQyxXQURRLG1CQUNBO0FBQ05DLGdCQUFRQyxHQUFSLENBQVksVUFBWjtBQUNELE9BSE87QUFJUkMsWUFKUSxvQkFJQztBQUNQLHVCQUFLQyxVQUFMLENBQWdCO0FBQ2RDLGVBQUs7QUFEUyxTQUFoQjtBQUdELE9BUk87QUFTUkMsU0FUUSxpQkFTRjtBQUNKLHVCQUFLRixVQUFMLENBQWdCO0FBQ2RDLGVBQUs7QUFEUyxTQUFoQjtBQUdEO0FBYk8sSzs7Ozs7NkJBZ0JELENBQ1I7Ozs7RUE1QmdDLGVBQUtFLEk7O2tCQUFuQmYsSyIsImZpbGUiOiJzZWNvbmQtaGFuZC1ib29rcy5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0IHdlcHkgZnJvbSAnd2VweSdcbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEluZGV4IGV4dGVuZHMgd2VweS5wYWdlIHtcbiAgY29uZmlnID0ge1xuICAgIG5hdmlnYXRpb25CYXJUaXRsZVRleHQ6ICfkuozmiYvkuabotYTmupDlubPlj7AnXG4gIH1cblxuICBkYXRhID0ge1xuICAgIHRpdGxlOiAn55m75YWl6K6k6K+BJyxcbiAgICB3ZWxjb21lOiAnJyxcbiAgICBpbWd0aXRsZTogJy4uL2ltYWdlcy9XZWNoYXRJTUcxNjUuanBlZydcbiAgfVxuXG4gIG1ldGhvZHMgPSB7XG4gICAgbG9naW4oKSB7XG4gICAgICBjb25zb2xlLmxvZygn552h6KeJ5ZCn77yM54uX5ZG95rKh5LqGJylcbiAgICB9LFxuICAgIGJ1dHRvbigpIHtcbiAgICAgIHdlcHkubmF2aWdhdGVUbyh7XG4gICAgICAgIHVybDogJy4vdXNlcj9kYXRhPTEmYT0yJ1xuICAgICAgfSlcbiAgICB9LFxuICAgIHRhcCgpIHtcbiAgICAgIHdlcHkubmF2aWdhdGVUbyh7XG4gICAgICAgIHVybDogJy4vdXNlcidcbiAgICAgIH0pXG4gICAgfVxuICB9XG5cbiAgb25Mb2FkKCkge1xuICB9XG59XG5cbiJdfQ==
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVpcmVkLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJib29rIiwiZm9jdXMiLCJpbnB1dFZhbHVlIiwicGxhY2Vob2xkZXIiLCJtZXRob2RzIiwiYmluZEJ1dHRvblRhcCIsInNldERhdGEiLCJvcHRpb24iLCJwYWdlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBQ3FCQSxLOzs7Ozs7Ozs7Ozs7OztvTEFDbkJDLE0sR0FBUztBQUNQQyw4QkFBd0I7QUFEakIsSyxRQUlUQyxJLEdBQU87QUFDTEMsWUFBTSw2QkFERDtBQUVMQyxhQUFPLEtBRkY7QUFHTEMsa0JBQVksRUFIUDtBQUlMQyxtQkFBYTs7QUFKUixLLFFBUVBDLE8sR0FBVTtBQUNSQyxtQkFEUSwyQkFDUTtBQUNkLGFBQUtDLE9BQUwsQ0FBYTtBQUNYTCxpQkFBTztBQURJLFNBQWI7QUFHRDtBQUxPLEs7Ozs7OzJCQVNITSxNLEVBQVE7QUFDYjtBQUNBO0FBQ0E7QUFDRDs7OztFQTFCZ0MsZUFBS0MsSTs7a0JBQW5CWixLIiwiZmlsZSI6InJlcXVpcmVkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+inheS5puWkhCdcbiAgfVxuXG4gIGRhdGEgPSB7XG4gICAgYm9vazogJy4uL2ltYWdlcy9XZWNoYXRJTUcxNjUuanBlZycsXG4gICAgZm9jdXM6IGZhbHNlLFxuICAgIGlucHV0VmFsdWU6ICcnLFxuICAgIHBsYWNlaG9sZGVyOiAnIOS+i+Wmgu+8muS9oOeahOWQjeWtlydcblxuICB9XG5cbiAgbWV0aG9kcyA9IHtcbiAgICBiaW5kQnV0dG9uVGFwKCkge1xuICAgICAgdGhpcy5zZXREYXRhKHtcbiAgICAgICAgZm9jdXM6IHRydWVcbiAgICAgIH0pXG4gICAgfVxuXG4gIH1cblxuICBvbkxvYWQob3B0aW9uKSB7XG4gICAgLy8gY29uc29sZS5sb2cob3B0aW9uKVxuICAgIC8vIGxldCBzZWxmID0gdGhpc1xuICAgIC8vIHNlbGYuYSA9IG9wdGlvbi5hXG4gIH1cbn1cbiJdfQ==

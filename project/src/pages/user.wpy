@@ -1,0 +1,263 @@
+
+<style lang="less">
+.img {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg');
+  background-size: 100% 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+.space {
+  margin-top: 3%;
+  margin-bottom: 5%;
+}
+
+.left {
+  margin-left: 15%;
+}
+
+.mid {
+  margin-left: 7.5%;
+  margin-right: 7.5%
+}
+
+.right {
+  margin-right: 15%;
+}
+
+.border {
+  border: 0.01px solid whitesmoke;
+}
+
+.bdcolf {
+  background-color: coral;
+}
+
+.bdcols {
+  background-color: bisque;
+}
+
+.bdcolt {
+  background-color: lightblue;
+}
+
+.center {
+  display: flex;
+  justify-content: space-between;
+  align-content: center; // margin-left: 10%;
+  // margin-right: 10%
+}
+
+.imgsize {
+  display: flex;
+  height: 6rem;
+  width: 10rem; // margin-right: 5%;
+  // margin-left: 0;
+}
+
+// .imgbdf {
+//   border: 0.01px solid white;
+//   border-right-color: coral;
+//   border-top-left-radius: 1px;
+// }
+// .imgbds {
+//   border: 0.01px solid bisque;
+//   border-right-color: bisque;
+//   border-top-left-radius: 1px;
+// }
+// .imgbdt {
+//   border: 0.01px solid lightblue;
+//   border-right-color: lightblue;
+//   border-top-left-radius: 1px;
+// }
+.wordcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5%;
+}
+.space {
+  margin-top:25%;
+}
+.dis-six {
+  // justify-content: space-between;
+  // margin: 5px 60px 10px 60px;
+  flex: 1;
+  flex-direction: column; // 主轴方向:列
+  justify-content: center;
+}
+
+.word {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.sixboxes {
+  background: rgba(36, 36, 36, 0.5);
+  height: 6.5rem;
+  width: 5.2rem;
+  margin: 1rem;
+  border-radius: 5%;
+}
+
+.height {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.view {
+  display: flex;
+  bottom: 0%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: gray;
+}
+</style>
+
+<template>
+  <view class="img">
+    <!-- <view class="user">
+        <text>{{saler}}的书架</text>
+      </view> -->
+
+    <!-- <view class="space left border bdcolf">
+        <view class="center" @tap="collection">
+          <image class="imgsize imgbdf" src="{{img}}" mode="scaleToFill"></image>
+          <view class="wordcenter">他的收藏</view>
+        </view>
+      </view>
+
+      <view class="space mid border bdcols">
+        <view class="center" @tap="required">
+          <image class="imgsize imgbds" src="{{img}}" mode="scaleToFill"></image>
+          <view class="wordcenter">他的需求</view>
+        </view>
+      </view>
+
+      <view class="space right border bdcolt">
+        <view class="center">
+          <image class="imgsize imgbdt" src="{{img}}" mode="scaleToFill"></image>
+          <view class="wordcenter">他的标签</view>
+        </view>
+      </view> -->
+    <view class="space">
+      <view class="row dis-six">
+        <view class="sixboxes text word">
+          <image class="height" src="{{a1}}"></image>
+          <text>{{first}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{a2}}"></image>
+          <text>{{second}}</text>
+        </view>
+        <!-- <view class="sixboxes text word">
+            <image class="height" src="{{a3}}"></image>
+            <text>{{third}}</text>
+          </view> -->
+      </view>
+
+      <view class="row dis-six">
+        <view class="sixboxes text word">
+          <image class="height" src="{{b1}}"></image>
+          <text>{{forth}}</text>
+        </view>
+        <view class="sixboxes text word" @tap="tap">
+          <image class="height" src="{{b2}}"></image>
+          <text>{{fifth}}</text>
+        </view>
+        <!-- <view class="sixboxes text word">
+            <image class="height" src="{{b3}}"></image>
+            <text>{{sixth}}</text>
+          </view> -->
+      </view>
+
+      <!-- <view class="row dis-six">
+          <view class="sixboxes text word">
+            <image class="height" src="{{c1}}"></image>
+            <text>{{seventh}}</text>
+          </view>
+          <view class="sixboxes text word">
+            <image class="height" src="{{c2}}"></image>
+            <text>{{eigth}}</text>
+          </view>
+          <view class="sixboxes text word">
+            <image class="height" src="{{c3}}"></image>
+            <text>{{nineth}}</text>
+          </view>-->
+    </view>
+    <!-- <view>
+        <view class="" src=""></view>
+      </view>
+      <view class="view">
+        <view>{{saler}}君↑</view>
+      </view> -->
+
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '藏经阁'
+  }
+  data = {
+    saler: '刘琦',
+    a: '',
+    img: '../images/WechatIMG165.jpeg',
+    first: '琥珀之剑',
+    second: '',
+    forth: '',
+    fifth: '',
+    a1: '',
+    a2: '',
+    b1: '',
+    b2: '../images/加号.png'
+  }
+  methods = {
+    tap() {
+      wepy.navigateTo({
+        url: './collection'
+      })
+    },
+    collection() {
+      wepy.navigateTo({
+        url: './collection'
+      })
+    },
+    required() {
+      wepy.navigateTo({
+        url: './required'
+      })
+    }
+  }
+  onLoad(option) {
+    console.log(option)
+    let self = this
+    self.a = option.a
+  }
+}
+</script>

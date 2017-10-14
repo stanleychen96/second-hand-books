@@ -16,14 +16,39 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/user',
       'pages/second-hand-books',
-      'pages/goodself.wpy'
+      'pages/information',
+      'pages/collection',
+      'pages/required'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      navigationBarBackgroundColor: 'Bisque',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      color: 'black',
+      selectedColor: 'pick',
+      borderstyle: 'pick',
+      backgroundColor: 'pick',
+      list: [{
+        pagePath: 'pages/user',
+        text: '我的收藏',
+        iconPath: './images/home (1).png',
+        selectedIconPath: './images/home.png'
+      }, {
+        pagePath: 'pages/required',
+        text: '想要寻找',
+        iconPath: './images/require.png',
+        selectedIconPath: './images/required.png'
+      }, {
+        pagePath: 'pages/information',
+        text: '我的信息',
+        iconPath: './images/star(1).png',
+        selectedIconPath: './images/star.png'
+      }]
     }
   }
 
@@ -31,7 +56,7 @@ export default class extends wepy.app {
     userInfo: null
   }
 
-  constructor () {
+  constructor() {
     super()
     this.use('requestfix')
   }
@@ -40,7 +65,7 @@ export default class extends wepy.app {
     this.testAsync()
   }
 
-  sleep (s) {
+  sleep(s) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve('promise resolved')
@@ -48,7 +73,7 @@ export default class extends wepy.app {
     })
   }
 
-  async testAsync () {
+  async testAsync() {
     const data = await this.sleep(3)
     console.log(data)
   }
@@ -59,7 +84,7 @@ export default class extends wepy.app {
       return this.globalData.userInfo
     }
     wepy.getUserInfo({
-      success (res) {
+      success(res) {
         that.globalData.userInfo = res.userInfo
         cb && cb(res.userInfo)
       }

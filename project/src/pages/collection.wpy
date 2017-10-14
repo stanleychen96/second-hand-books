@@ -1,0 +1,150 @@
+// 2017-10-13 Stanley Chen
+
+<style lang="less">
+.good {
+  display: flex;
+}
+
+.view {
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.5rem;
+  color: gray;
+}
+
+.img {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg');
+  background-size: 100% 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.location {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.size {
+  width: 20%;
+  height: 20%;
+}
+.space {
+  margin-top:35%;
+}
+.dis-six {
+  // justify-content: space-between;
+  // margin: 5px 60px 10px 60px;
+  flex: 1;
+  flex-direction: column; // 主轴方向:列
+  justify-content: center;
+}
+
+.word {
+  font-size: 0.63rem;
+  color: gray;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.sixboxes {
+  background: pink;
+  height: 5.2rem;
+  width: 5.2rem;
+  margin: 0.35rem;
+}
+
+.height {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 10px;
+}
+</style>
+
+<template>
+  <view class="img">
+    <!-- <view class="location size" @tap="fir" scr="{{book}}"></view> -->
+
+    <view class= "space">
+      <view class="row dis-six">
+        <view class="sixboxes text word">
+          <image class="height" src="{{a1}}"></image>
+          <text>{{first}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{a2}}"></image>
+          <text>{{second}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{a3}}"></image>
+          <text>{{third}}</text>
+        </view>
+      </view>
+
+      <view class="row dis-six">
+        <view class="sixboxes text word">
+          <image class="height" src="{{b1}}"></image>
+          <text>{{forth}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{b2}}"></image>
+          <text>{{fifth}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{b3}}"></image>
+          <text>{{sixth}}</text>
+        </view>
+      </view>
+
+      <view class="row dis-six">
+        <view class="sixboxes text word">
+          <image class="height" src="{{c1}}"></image>
+          <text>{{seventh}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{c2}}"></image>
+          <text>{{eigth}}</text>
+        </view>
+        <view class="sixboxes text word">
+          <image class="height" src="{{c3}}"></image>
+          <text>{{nineth}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '书架'
+  }
+
+  data = {
+    book: '../images/WechatIMG165.jpeg'
+  }
+
+  methods = {
+    fir() {
+
+    }
+  }
+
+  onLoad(option) {
+    // console.log(option)
+    // let self = this
+    // self.a = option.a
+  }
+}
+</script>
