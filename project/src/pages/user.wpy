@@ -1,3 +1,4 @@
+// 2017-10-12 Stanley Chen
 
 <style lang="less">
 .img {
@@ -55,46 +56,29 @@
 .center {
   display: flex;
   justify-content: space-between;
-  align-content: center; // margin-left: 10%;
-  // margin-right: 10%
+  align-content: center; 
 }
 
 .imgsize {
   display: flex;
   height: 6rem;
-  width: 10rem; // margin-right: 5%;
-  // margin-left: 0;
+  width: 10rem;
 }
 
-// .imgbdf {
-//   border: 0.01px solid white;
-//   border-right-color: coral;
-//   border-top-left-radius: 1px;
-// }
-// .imgbds {
-//   border: 0.01px solid bisque;
-//   border-right-color: bisque;
-//   border-top-left-radius: 1px;
-// }
-// .imgbdt {
-//   border: 0.01px solid lightblue;
-//   border-right-color: lightblue;
-//   border-top-left-radius: 1px;
-// }
 .wordcenter {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-right: 5%;
 }
+
 .space {
-  margin-top:25%;
+  margin-top: 25%;
 }
+
 .dis-six {
-  // justify-content: space-between;
-  // margin: 5px 60px 10px 60px;
   flex: 1;
-  flex-direction: column; // 主轴方向:列
+  flex-direction: column; 
   justify-content: center;
 }
 
@@ -120,14 +104,14 @@
 }
 
 .height {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   padding: 10px;
 }
 
 .view {
   display: flex;
-  bottom: 0%;
+  bottom: 0;
   width: 100%;
   position: absolute;
   justify-content: center;
@@ -139,81 +123,30 @@
 
 <template>
   <view class="img">
-    <!-- <view class="user">
-        <text>{{saler}}的书架</text>
-      </view> -->
 
-    <!-- <view class="space left border bdcolf">
-        <view class="center" @tap="collection">
-          <image class="imgsize imgbdf" src="{{img}}" mode="scaleToFill"></image>
-          <view class="wordcenter">他的收藏</view>
-        </view>
-      </view>
-
-      <view class="space mid border bdcols">
-        <view class="center" @tap="required">
-          <image class="imgsize imgbds" src="{{img}}" mode="scaleToFill"></image>
-          <view class="wordcenter">他的需求</view>
-        </view>
-      </view>
-
-      <view class="space right border bdcolt">
-        <view class="center">
-          <image class="imgsize imgbdt" src="{{img}}" mode="scaleToFill"></image>
-          <view class="wordcenter">他的标签</view>
-        </view>
-      </view> -->
     <view class="space">
       <view class="row dis-six">
         <view class="sixboxes text word">
           <image class="height" src="{{a1}}"></image>
-          <text>{{first}}</text>
+          <!-- <text>{{first}}</text> -->
         </view>
         <view class="sixboxes text word">
           <image class="height" src="{{a2}}"></image>
-          <text>{{second}}</text>
+          <!-- <text>{{second}}</text> -->
         </view>
-        <!-- <view class="sixboxes text word">
-            <image class="height" src="{{a3}}"></image>
-            <text>{{third}}</text>
-          </view> -->
       </view>
 
       <view class="row dis-six">
         <view class="sixboxes text word">
           <image class="height" src="{{b1}}"></image>
-          <text>{{forth}}</text>
+          <!-- <text>{{forth}}</text> -->
         </view>
         <view class="sixboxes text word" @tap="tap">
           <image class="height" src="{{b2}}"></image>
-          <text>{{fifth}}</text>
+          <!-- <text>{{fifth}}</text> -->
         </view>
-        <!-- <view class="sixboxes text word">
-            <image class="height" src="{{b3}}"></image>
-            <text>{{sixth}}</text>
-          </view> -->
       </view>
-
-      <!-- <view class="row dis-six">
-          <view class="sixboxes text word">
-            <image class="height" src="{{c1}}"></image>
-            <text>{{seventh}}</text>
-          </view>
-          <view class="sixboxes text word">
-            <image class="height" src="{{c2}}"></image>
-            <text>{{eigth}}</text>
-          </view>
-          <view class="sixboxes text word">
-            <image class="height" src="{{c3}}"></image>
-            <text>{{nineth}}</text>
-          </view>-->
     </view>
-    <!-- <view>
-        <view class="" src=""></view>
-      </view>
-      <view class="view">
-        <view>{{saler}}君↑</view>
-      </view> -->
 
   </view>
 </template>
@@ -225,13 +158,11 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '藏经阁'
   }
   data = {
-    saler: '刘琦',
-    a: '',
     img: '../images/WechatIMG165.jpeg',
-    first: '琥珀之剑',
-    second: '',
-    forth: '',
-    fifth: '',
+    // first: '琥珀之剑',
+    // second: '',
+    // forth: '',
+    // fifth: '',
     a1: '',
     a2: '',
     b1: '',
@@ -242,22 +173,12 @@ export default class Index extends wepy.page {
       wepy.navigateTo({
         url: './collection'
       })
-    },
-    collection() {
-      wepy.navigateTo({
-        url: './collection'
-      })
-    },
-    required() {
-      wepy.navigateTo({
-        url: './required'
-      })
     }
   }
   onLoad(option) {
-    console.log(option)
-    let self = this
-    self.a = option.a
+    // console.log(option)
+    // let self = this
+    // self.a = option.a
   }
 }
 </script>

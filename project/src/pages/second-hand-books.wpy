@@ -98,13 +98,15 @@ export default class Index extends wepy.page {
       console.log('睡觉吧，狗命没了')
     },
     button() {
+      console.log('..1...')
       wepy.navigateTo({
-        url: './user?data=1&a=2'
+        url: 'user?a=1'
       })
+      console.log('..2...')
     },
     tap() {
       wepy.navigateTo({
-        url: './user'
+        url: 'user'
       })
     }
   }

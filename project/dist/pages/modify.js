@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
+exports.default = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -34,20 +34,8 @@ var Index = function (_wepy$page) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      navigationBarTitleText: '觅书处'
-    }, _this.data = {
-      book: '../images/WechatIMG165.jpeg',
-      focus: false,
-      inputValue: '',
-      placeholder: '例如：围城'
-
-    }, _this.methods = {
-      bindButtonTap: function bindButtonTap() {
-        this.setData({
-          focus: true
-        });
-      }
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+      navigationBarTitleText: 'wx'
+    }, _this.data = {}, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
@@ -62,7 +50,5 @@ var Index = function (_wepy$page) {
   return Index;
 }(_wepy2.default.page);
 
-
-Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/required'));
-
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVpcmVkLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJib29rIiwiZm9jdXMiLCJpbnB1dFZhbHVlIiwicGxhY2Vob2xkZXIiLCJtZXRob2RzIiwiYmluZEJ1dHRvblRhcCIsInNldERhdGEiLCJvcHRpb24iLCJwYWdlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBQ3FCQSxLOzs7Ozs7Ozs7Ozs7OztvTEFDbkJDLE0sR0FBUztBQUNQQyw4QkFBd0I7QUFEakIsSyxRQUlUQyxJLEdBQU87QUFDTEMsWUFBTSw2QkFERDtBQUVMQyxhQUFPLEtBRkY7QUFHTEMsa0JBQVksRUFIUDtBQUlMQyxtQkFBYTs7QUFKUixLLFFBUVBDLE8sR0FBVTtBQUNSQyxtQkFEUSwyQkFDUTtBQUNkLGFBQUtDLE9BQUwsQ0FBYTtBQUNYTCxpQkFBTztBQURJLFNBQWI7QUFHRDtBQUxPLEs7Ozs7OzJCQVNITSxNLEVBQVE7QUFDYjtBQUNBO0FBQ0E7QUFDRDs7OztFQTFCZ0MsZUFBS0MsSTs7a0JBQW5CWixLIiwiZmlsZSI6InJlcXVpcmVkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+inheS5puWkhCdcbiAgfVxuXG4gIGRhdGEgPSB7XG4gICAgYm9vazogJy4uL2ltYWdlcy9XZWNoYXRJTUcxNjUuanBlZycsXG4gICAgZm9jdXM6IGZhbHNlLFxuICAgIGlucHV0VmFsdWU6ICcnLFxuICAgIHBsYWNlaG9sZGVyOiAn5L6L5aaC77ya5Zu05Z+OJ1xuXG4gIH1cblxuICBtZXRob2RzID0ge1xuICAgIGJpbmRCdXR0b25UYXAoKSB7XG4gICAgICB0aGlzLnNldERhdGEoe1xuICAgICAgICBmb2N1czogdHJ1ZVxuICAgICAgfSlcbiAgICB9XG5cbiAgfVxuXG4gIG9uTG9hZChvcHRpb24pIHtcbiAgICAvLyBjb25zb2xlLmxvZyhvcHRpb24pXG4gICAgLy8gbGV0IHNlbGYgPSB0aGlzXG4gICAgLy8gc2VsZi5hID0gb3B0aW9uLmFcbiAgfVxufVxuIl19
+exports.default = Index;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGlmeS5qcyJdLCJuYW1lcyI6WyJJbmRleCIsImNvbmZpZyIsIm5hdmlnYXRpb25CYXJUaXRsZVRleHQiLCJkYXRhIiwibWV0aG9kcyIsIm9wdGlvbiIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBR1RDLEksR0FBTyxFLFFBQ1BDLE8sR0FBVSxFOzs7OzsyQkFDSEMsTSxFQUFRO0FBQ2I7QUFDQTtBQUNBO0FBQ0Q7Ozs7RUFWZ0MsZUFBS0MsSTs7a0JBQW5CTixLIiwiZmlsZSI6Im1vZGlmeS5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0IHdlcHkgZnJvbSAnd2VweSdcbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEluZGV4IGV4dGVuZHMgd2VweS5wYWdlIHtcbiAgY29uZmlnID0ge1xuICAgIG5hdmlnYXRpb25CYXJUaXRsZVRleHQ6ICd3eCdcbiAgfVxuICBkYXRhID0ge31cbiAgbWV0aG9kcyA9IHt9XG4gIG9uTG9hZChvcHRpb24pIHtcbiAgICAvLyBjb25zb2xlLmxvZyhvcHRpb24pXG4gICAgLy8gbGV0IHNlbGYgPSB0aGlzXG4gICAgLy8gc2VsZi5hID0gb3B0aW9uLmFcbiAgfVxufVxuIl19

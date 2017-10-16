@@ -1,8 +1,8 @@
 
   <view class="img">
-    <view class="section ">
-      <view class="">
-        <button class="btn-area" bindtap="bindButtonTap">搜作者</button>
+    <view class="section">
+      <view>
+        <button class="btn-area" bindtap="bindButtonTap">搜书名</button>
       </view>
       <input class="holder" placeholder="{{placeholder}}" focus="{{focus}}"/>
     </view>

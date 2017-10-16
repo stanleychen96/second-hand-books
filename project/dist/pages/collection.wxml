@@ -1,52 +1,23 @@
 
-  <view class="img">
-    <!-- <view class="location size" bindtap="fir" scr="{{book}}"></view> -->
-
-    <view class="space">
-      <view class="row dis-six">
-        <view class="sixboxes text word">
-          <image class="height" src="{{a1}}"/>
-          <text>{{first}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{a2}}"/>
-          <text>{{second}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{a3}}"/>
-          <text>{{third}}</text>
+  <scroll-view scroll-y class="img">
+    <view class="row dis-six ">
+      <view  wx:for="{{src}}" wx:key="index">
+        <view class="boxes">
+          <image class="height" src="{{item}}" bindtap="onTapImg"/>
         </view>
       </view>
-
-      <view class="row dis-six">
-        <view class="sixboxes text word">
-          <image class="height" src="{{b1}}"/>
-          <text>{{forth}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{b2}}"/>
-          <text>{{fifth}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{b3}}"/>
-          <text>{{sixth}}</text>
-        </view>
-      </view>
-
-      <view class="row dis-six">
-        <view class="sixboxes text word">
-          <image class="height" src="{{c1}}"/>
-          <text>{{seventh}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{c2}}"/>
-          <text>{{eigth}}</text>
-        </view>
-        <view class="sixboxes text word">
+      <view bindtap="tap">
+        <view class="boxes">
           <image class="height" src="{{c3}}"/>
-          <text>{{nineth}}</text>
         </view>
       </view>
     </view>
 
-  </view>
+    <view  wx:if="{{show}}" class="inputContent">
+      <view class="center">
+        <input/>
+      </view>
+      <button class="btn-area" bindtap="bindButtonTap">确认</button>
+    </view>
+
+  </scroll-view>

@@ -34,28 +34,22 @@ var Index = function (_wepy$page) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      navigationBarTitleText: '觅书处'
+      navigationBarTitleText: '详情 '
     }, _this.data = {
-      book: '../images/WechatIMG165.jpeg',
-      focus: false,
-      inputValue: '',
-      placeholder: '例如：围城'
-
-    }, _this.methods = {
-      bindButtonTap: function bindButtonTap() {
-        this.setData({
-          focus: true
-        });
-      }
-    }, _temp), _possibleConstructorReturn(_this, _ret);
+      usetime: 'unknow',
+      whichclass: 'unknow',
+      target: false,
+      devote: ''
+    }, _this.methods = {}, _temp), _possibleConstructorReturn(_this, _ret);
   }
 
   _createClass(Index, [{
     key: 'onLoad',
     value: function onLoad(option) {
-      // console.log(option)
-      // let self = this
-      // self.a = option.a
+      console.log(option);
+      var self = this;
+      console.log(option.target);
+      self.src = option.target;
     }
   }]);
 
@@ -63,6 +57,6 @@ var Index = function (_wepy$page) {
 }(_wepy2.default.page);
 
 
-Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/required'));
+Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/details'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVpcmVkLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJib29rIiwiZm9jdXMiLCJpbnB1dFZhbHVlIiwicGxhY2Vob2xkZXIiLCJtZXRob2RzIiwiYmluZEJ1dHRvblRhcCIsInNldERhdGEiLCJvcHRpb24iLCJwYWdlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBQ3FCQSxLOzs7Ozs7Ozs7Ozs7OztvTEFDbkJDLE0sR0FBUztBQUNQQyw4QkFBd0I7QUFEakIsSyxRQUlUQyxJLEdBQU87QUFDTEMsWUFBTSw2QkFERDtBQUVMQyxhQUFPLEtBRkY7QUFHTEMsa0JBQVksRUFIUDtBQUlMQyxtQkFBYTs7QUFKUixLLFFBUVBDLE8sR0FBVTtBQUNSQyxtQkFEUSwyQkFDUTtBQUNkLGFBQUtDLE9BQUwsQ0FBYTtBQUNYTCxpQkFBTztBQURJLFNBQWI7QUFHRDtBQUxPLEs7Ozs7OzJCQVNITSxNLEVBQVE7QUFDYjtBQUNBO0FBQ0E7QUFDRDs7OztFQTFCZ0MsZUFBS0MsSTs7a0JBQW5CWixLIiwiZmlsZSI6InJlcXVpcmVkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+inheS5puWkhCdcbiAgfVxuXG4gIGRhdGEgPSB7XG4gICAgYm9vazogJy4uL2ltYWdlcy9XZWNoYXRJTUcxNjUuanBlZycsXG4gICAgZm9jdXM6IGZhbHNlLFxuICAgIGlucHV0VmFsdWU6ICcnLFxuICAgIHBsYWNlaG9sZGVyOiAn5L6L5aaC77ya5Zu05Z+OJ1xuXG4gIH1cblxuICBtZXRob2RzID0ge1xuICAgIGJpbmRCdXR0b25UYXAoKSB7XG4gICAgICB0aGlzLnNldERhdGEoe1xuICAgICAgICBmb2N1czogdHJ1ZVxuICAgICAgfSlcbiAgICB9XG5cbiAgfVxuXG4gIG9uTG9hZChvcHRpb24pIHtcbiAgICAvLyBjb25zb2xlLmxvZyhvcHRpb24pXG4gICAgLy8gbGV0IHNlbGYgPSB0aGlzXG4gICAgLy8gc2VsZi5hID0gb3B0aW9uLmFcbiAgfVxufVxuIl19
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRldGFpbHMuanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsInVzZXRpbWUiLCJ3aGljaGNsYXNzIiwidGFyZ2V0IiwiZGV2b3RlIiwibWV0aG9kcyIsIm9wdGlvbiIsImNvbnNvbGUiLCJsb2ciLCJzZWxmIiwic3JjIiwicGFnZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQ0E7Ozs7Ozs7Ozs7OztJQUNxQkEsSzs7Ozs7Ozs7Ozs7Ozs7b0xBQ25CQyxNLEdBQVM7QUFDUEMsOEJBQXdCO0FBRGpCLEssUUFHVEMsSSxHQUFPO0FBQ0xDLGVBQVMsUUFESjtBQUVMQyxrQkFBWSxRQUZQO0FBR0xDLGNBQVEsS0FISDtBQUlMQyxjQUFRO0FBSkgsSyxRQU1QQyxPLEdBQVUsRTs7Ozs7MkJBQ0hDLE0sRUFBUTtBQUNiQyxjQUFRQyxHQUFSLENBQVlGLE1BQVo7QUFDQSxVQUFJRyxPQUFPLElBQVg7QUFDQUYsY0FBUUMsR0FBUixDQUFZRixPQUFPSCxNQUFuQjtBQUNBTSxXQUFLQyxHQUFMLEdBQVdKLE9BQU9ILE1BQWxCO0FBQ0Q7Ozs7RUFoQmdDLGVBQUtRLEk7O2tCQUFuQmQsSyIsImZpbGUiOiJkZXRhaWxzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+ivpuaDhSAnXG4gIH1cbiAgZGF0YSA9IHtcbiAgICB1c2V0aW1lOiAndW5rbm93JyxcbiAgICB3aGljaGNsYXNzOiAndW5rbm93JyxcbiAgICB0YXJnZXQ6IGZhbHNlLFxuICAgIGRldm90ZTogJydcbiAgfVxuICBtZXRob2RzID0ge31cbiAgb25Mb2FkKG9wdGlvbikge1xuICAgIGNvbnNvbGUubG9nKG9wdGlvbilcbiAgICBsZXQgc2VsZiA9IHRoaXNcbiAgICBjb25zb2xlLmxvZyhvcHRpb24udGFyZ2V0KVxuICAgIHNlbGYuc3JjID0gb3B0aW9uLnRhcmdldFxuICB9XG59XG4iXX0=

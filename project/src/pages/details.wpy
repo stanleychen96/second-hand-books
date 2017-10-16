@@ -1,0 +1,42 @@
+<style lang="less">
+.img {
+  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg');
+  background-size: 100% 100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+</style>
+<template>
+  <view class="img">
+    <view class="">
+      <image class="" src="{{devote}}"></image>
+    </view>
+    <text class="">使用时间{{usetime}}</text>
+    <text class="">使用课程{{whichclass}}</text>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '详情 '
+  }
+  data = {
+    usetime: 'unknow',
+    whichclass: 'unknow',
+    target: false,
+    devote: ''
+  }
+  methods = {}
+  onLoad(option) {
+    console.log(option)
+    let self = this
+    console.log(option.target)
+    self.src = option.target
+  }
+}
+</script>

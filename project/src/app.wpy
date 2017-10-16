@@ -17,16 +17,19 @@ export default class extends wepy.app {
   config = {
     pages: [
       'pages/user',
-      'pages/second-hand-books',
       'pages/information',
       'pages/collection',
-      'pages/required'
+      'pages/required',
+      'pages/second-hand-books',
+      'pages/details'
+
     ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: 'Bisque',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
+      enablePullDownRefresh: true
     },
     tabBar: {
       color: 'black',
@@ -63,6 +66,40 @@ export default class extends wepy.app {
 
   onLaunch() {
     this.testAsync()
+    wepy.login({
+      success: function(res) {
+        if (res.code) {
+          wepy.request({
+            url: 'https://test.com/onLogin',
+            data: {
+              code: res.code
+            }
+          })
+        } else {
+          console.log('获取用户登录态失败！' + res.errMsg)
+        }
+      }
+    })
+    wepy.checkSession({
+      success: function() {
+      },
+      fail: function() {
+        wepy.login({
+          success: function(res) {
+            if (res.code) {
+              wepy.request({
+                url: 'https://test.com/onLogin',
+                data: {
+                  code: res.code
+                }
+              })
+            } else {
+              console.log('获取用户登录态失败！' + res.errMsg)
+            }
+          }
+        })
+      }
+    })
   }
 
   sleep(s) {

@@ -1,0 +1,8 @@
+
+  <view class="img">
+    <view class="">
+      <image class="" src="{{devote}}"/>
+    </view>
+    <text class="">使用时间{{usetime}}</text>
+    <text class="">使用课程{{whichclass}}</text>
+  </view>

@@ -46,29 +46,21 @@
   font-size: 0.8rem;
   
 }
-// .center {
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-  
-// }
 
 .holder {
   height: 2rem;
-  width: 6rem;
   background: rgba(36, 36, 36, 0.5);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: 0.8rem;
-
 }
 </style>
 
 <template>
   <view class="img">
-    <view class="section ">
-      <view class="">
-        <button class="btn-area" bindtap="bindButtonTap">搜作者</button>
+    <view class="section">
+      <view>
+        <button class="btn-area" bindtap="bindButtonTap">搜书名</button>
       </view>
       <input class="holder" placeholder="{{placeholder}}" focus="{{focus}}" />
     </view>
@@ -88,7 +80,7 @@ export default class Index extends wepy.page {
     book: '../images/WechatIMG165.jpeg',
     focus: false,
     inputValue: '',
-    placeholder: ' 例如：你的名字'
+    placeholder: '例如：围城'
 
   }
 

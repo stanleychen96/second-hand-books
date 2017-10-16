@@ -35,93 +35,107 @@
   width: 20%;
   height: 20%;
 }
+
 .space {
-  margin-top:35%;
+  margin-top: 35%;
 }
+
 .dis-six {
   // justify-content: space-between;
   // margin: 5px 60px 10px 60px;
   flex: 1;
   flex-direction: column; // 主轴方向:列
   justify-content: center;
-}
-
-.word {
-  font-size: 0.63rem;
-  color: gray;
+  flex-wrap: wrap;
 }
 
 .row {
   display: flex;
   flex-direction: row;
+  margin-top: 5%;
 }
 
-.sixboxes {
-  background: pink;
-  height: 5.2rem;
+.boxes {
+  background: rgba(36, 36, 36, 0.5);
+  height: 6.2rem;
   width: 5.2rem;
   margin: 0.35rem;
+  border-radius: 0.4rem;
+}
+
+.boxadd {
+  background: rgba(36, 36, 36, 0.5);
+  height: 6rem;
+  width: 5.2rem;
+  margin: 0.35rem;
+  border-radius: 0.3rem;
 }
 
 .height {
-  height: 1.5rem;
-  width: 1.5rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  border-radius: 0.4rem;
+}
+
+.heightadd {
+  height: 80%;
+  width: 80%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.inputContent {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(36, 36, 36, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  padding: 1rem;
+  background-color: rgba(36, 36, 36, 0.9);
+  border-radius: 10px;
+}
+
+.btn-area {
+  margin: 0;
 }
 </style>
 
 <template>
-  <view class="img">
-    <!-- <view class="location size" @tap="fir" scr="{{book}}"></view> -->
-
-    <view class= "space">
-      <view class="row dis-six">
-        <view class="sixboxes text word">
-          <image class="height" src="{{a1}}"></image>
-          <text>{{first}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{a2}}"></image>
-          <text>{{second}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{a3}}"></image>
-          <text>{{third}}</text>
+  <scroll-view scroll-y class="img">
+    <view class="row dis-six ">
+      <view wx:for="{{src}}" wx:key="index">
+        <view class="boxes">
+          <image class="height" src="{{item}}" @tap="onTapImg"></image>
         </view>
       </view>
-
-      <view class="row dis-six">
-        <view class="sixboxes text word">
-          <image class="height" src="{{b1}}"></image>
-          <text>{{forth}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{b2}}"></image>
-          <text>{{fifth}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{b3}}"></image>
-          <text>{{sixth}}</text>
-        </view>
-      </view>
-
-      <view class="row dis-six">
-        <view class="sixboxes text word">
-          <image class="height" src="{{c1}}"></image>
-          <text>{{seventh}}</text>
-        </view>
-        <view class="sixboxes text word">
-          <image class="height" src="{{c2}}"></image>
-          <text>{{eigth}}</text>
-        </view>
-        <view class="sixboxes text word">
+      <view @tap="tap">
+        <view class="boxes">
           <image class="height" src="{{c3}}"></image>
-          <text>{{nineth}}</text>
         </view>
       </view>
     </view>
 
-  </view>
+    <view wx:if="{{show}}" class="inputContent">
+      <view class="center">
+        <input />
+      </view>
+      <button class="btn-area" bindtap="bindButtonTap">确认</button>
+    </view>
+
+  </scroll-view>
 </template>
 
 <script>
@@ -132,11 +146,37 @@ export default class Index extends wepy.page {
   }
 
   data = {
-    book: '../images/WechatIMG165.jpeg'
+    book: '../images/WechatIMG165.jpeg',
+    c3: '../images/加号.png',
+    src: [],
+    show: false
   }
 
   methods = {
-    fir() {
+    tap() {
+      let that = this
+      wepy.chooseImage({
+        count: 1,
+        sizeType: ['original', 'compressed'],
+        sourceType: ['album', 'camera'],
+        success: function(res) {
+          let arr = that.src
+          arr.push(res.tempFilePaths[0])
+          that.src = arr
+          that.setData({
+            src: arr
+          })
+        }
+      })
+    },
+    onTapImg(e) {
+      // let self = this
+      // self.show = true
+      wepy.navigateTo({
+        url: 'details?target=true'
+      })
+    },
+    bindButtonTap() {
 
     }
   }
