@@ -5,9 +5,15 @@
       <image class="size" src="{{avatarUrl}}"/>
 
       <view class="center">
-        <text class="empty">昵称:{{nickName}}</text>
-        <view class=""/>
-        <view class="" src="{{}}"/>
+        <view class="row">
+          <text class="empty">昵称:</text>
+          <text>{{nickName}}</text>
+        </view>
+        <view class="row">
+          <text class="empty">联系电话:</text>
+          <text>{{phonenumber}}</text>
+        </view>
+        
       </view>
 
     </view>

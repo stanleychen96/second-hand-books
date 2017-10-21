@@ -113,6 +113,11 @@ export default class Index extends wepy.page {
 
   onLoad() {
   }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
 }
 
 </script>

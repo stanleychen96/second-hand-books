@@ -32,40 +32,44 @@
   height: 10%;
   width: 100%;
   margin-top: 20%;
-  // margin-left: 15%;
-  // margin-right: 15%;
+
 }
 .btn-area {
-  // height: 100%;
-  // width: 100%;
+
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background-color: whitesmoke;
   height: 2rem;
-  width: 3.9rem;
-  font-size: 0.8rem;
-  
+  border-top-left-radius: 5px;
 }
+.center { 
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  font-size: 16px;
+  font-weight:bold;
 
+}
 .holder {
   height: 2rem;
-  background: rgba(36, 36, 36, 0.5);
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-size: 0.8rem;
+  background: rgba(36, 36, 36, 1);
+  padding-left: 0.5rem;
+  font-size: 16px;
 }
 </style>
 
 <template>
   <view class="img">
     <view class="section">
-      <view>
-        <button class="btn-area" bindtap="bindButtonTap">搜书名</button>
+      <view class="btn-area">
+        <view class="center" @tap="bindButtonTap">搜书名</view>
       </view>
-      <input class="holder" placeholder="{{placeholder}}" focus="{{focus}}" />
+      <input class="holder" placeholder="{{placeholder}}" placeholder-style="color:white" focus="{{focus}}" />
     </view>
-
-
   </view>
 </template>
 
@@ -80,14 +84,14 @@ export default class Index extends wepy.page {
     book: '../images/WechatIMG165.jpeg',
     focus: false,
     inputValue: '',
-    placeholder: '例如：围城'
+    placeholder: '输入你想寻找的二手书'
 
   }
 
   methods = {
     bindButtonTap() {
-      this.setData({
-        focus: true
+      wepy.navigateTo({
+        url: './search'
       })
     }
 
@@ -97,6 +101,11 @@ export default class Index extends wepy.page {
     // console.log(option)
     // let self = this
     // self.a = option.a
+  }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
   }
 }
 </script>

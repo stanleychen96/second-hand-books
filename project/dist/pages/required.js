@@ -39,12 +39,12 @@ var Index = function (_wepy$page) {
       book: '../images/WechatIMG165.jpeg',
       focus: false,
       inputValue: '',
-      placeholder: '例如：围城'
+      placeholder: '输入你想寻找的二手书'
 
     }, _this.methods = {
       bindButtonTap: function bindButtonTap() {
-        this.setData({
-          focus: true
+        _wepy2.default.navigateTo({
+          url: './search'
         });
       }
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -57,6 +57,13 @@ var Index = function (_wepy$page) {
       // let self = this
       // self.a = option.a
     }
+  }, {
+    key: 'onPullDownRefresh',
+    value: function onPullDownRefresh() {
+      setTimeout(function () {
+        _wepy2.default.stopPullDownRefresh();
+      }, 1000);
+    }
   }]);
 
   return Index;
@@ -65,4 +72,4 @@ var Index = function (_wepy$page) {
 
 Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/required'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVpcmVkLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJib29rIiwiZm9jdXMiLCJpbnB1dFZhbHVlIiwicGxhY2Vob2xkZXIiLCJtZXRob2RzIiwiYmluZEJ1dHRvblRhcCIsInNldERhdGEiLCJvcHRpb24iLCJwYWdlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7QUFDQTs7Ozs7Ozs7Ozs7O0lBQ3FCQSxLOzs7Ozs7Ozs7Ozs7OztvTEFDbkJDLE0sR0FBUztBQUNQQyw4QkFBd0I7QUFEakIsSyxRQUlUQyxJLEdBQU87QUFDTEMsWUFBTSw2QkFERDtBQUVMQyxhQUFPLEtBRkY7QUFHTEMsa0JBQVksRUFIUDtBQUlMQyxtQkFBYTs7QUFKUixLLFFBUVBDLE8sR0FBVTtBQUNSQyxtQkFEUSwyQkFDUTtBQUNkLGFBQUtDLE9BQUwsQ0FBYTtBQUNYTCxpQkFBTztBQURJLFNBQWI7QUFHRDtBQUxPLEs7Ozs7OzJCQVNITSxNLEVBQVE7QUFDYjtBQUNBO0FBQ0E7QUFDRDs7OztFQTFCZ0MsZUFBS0MsSTs7a0JBQW5CWixLIiwiZmlsZSI6InJlcXVpcmVkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+inheS5puWkhCdcbiAgfVxuXG4gIGRhdGEgPSB7XG4gICAgYm9vazogJy4uL2ltYWdlcy9XZWNoYXRJTUcxNjUuanBlZycsXG4gICAgZm9jdXM6IGZhbHNlLFxuICAgIGlucHV0VmFsdWU6ICcnLFxuICAgIHBsYWNlaG9sZGVyOiAn5L6L5aaC77ya5Zu05Z+OJ1xuXG4gIH1cblxuICBtZXRob2RzID0ge1xuICAgIGJpbmRCdXR0b25UYXAoKSB7XG4gICAgICB0aGlzLnNldERhdGEoe1xuICAgICAgICBmb2N1czogdHJ1ZVxuICAgICAgfSlcbiAgICB9XG5cbiAgfVxuXG4gIG9uTG9hZChvcHRpb24pIHtcbiAgICAvLyBjb25zb2xlLmxvZyhvcHRpb24pXG4gICAgLy8gbGV0IHNlbGYgPSB0aGlzXG4gICAgLy8gc2VsZi5hID0gb3B0aW9uLmFcbiAgfVxufVxuIl19
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlcXVpcmVkLmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJib29rIiwiZm9jdXMiLCJpbnB1dFZhbHVlIiwicGxhY2Vob2xkZXIiLCJtZXRob2RzIiwiYmluZEJ1dHRvblRhcCIsIm5hdmlnYXRlVG8iLCJ1cmwiLCJvcHRpb24iLCJzZXRUaW1lb3V0Iiwic3RvcFB1bGxEb3duUmVmcmVzaCIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBSVRDLEksR0FBTztBQUNMQyxZQUFNLDZCQUREO0FBRUxDLGFBQU8sS0FGRjtBQUdMQyxrQkFBWSxFQUhQO0FBSUxDLG1CQUFhOztBQUpSLEssUUFRUEMsTyxHQUFVO0FBQ1JDLG1CQURRLDJCQUNRO0FBQ2QsdUJBQUtDLFVBQUwsQ0FBZ0I7QUFDZEMsZUFBSztBQURTLFNBQWhCO0FBR0Q7QUFMTyxLOzs7OzsyQkFTSEMsTSxFQUFRO0FBQ2I7QUFDQTtBQUNBO0FBQ0Q7Ozt3Q0FDbUI7QUFDbEJDLGlCQUFXLFlBQVc7QUFDcEIsdUJBQUtDLG1CQUFMO0FBQ0QsT0FGRCxFQUVHLElBRkg7QUFHRDs7OztFQS9CZ0MsZUFBS0MsSTs7a0JBQW5CZixLIiwiZmlsZSI6InJlcXVpcmVkLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXG5pbXBvcnQgd2VweSBmcm9tICd3ZXB5J1xuZXhwb3J0IGRlZmF1bHQgY2xhc3MgSW5kZXggZXh0ZW5kcyB3ZXB5LnBhZ2Uge1xuICBjb25maWcgPSB7XG4gICAgbmF2aWdhdGlvbkJhclRpdGxlVGV4dDogJ+inheS5puWkhCdcbiAgfVxuXG4gIGRhdGEgPSB7XG4gICAgYm9vazogJy4uL2ltYWdlcy9XZWNoYXRJTUcxNjUuanBlZycsXG4gICAgZm9jdXM6IGZhbHNlLFxuICAgIGlucHV0VmFsdWU6ICcnLFxuICAgIHBsYWNlaG9sZGVyOiAn6L6T5YWl5L2g5oOz5a+75om+55qE5LqM5omL5LmmJ1xuXG4gIH1cblxuICBtZXRob2RzID0ge1xuICAgIGJpbmRCdXR0b25UYXAoKSB7XG4gICAgICB3ZXB5Lm5hdmlnYXRlVG8oe1xuICAgICAgICB1cmw6ICcuL3NlYXJjaCdcbiAgICAgIH0pXG4gICAgfVxuXG4gIH1cblxuICBvbkxvYWQob3B0aW9uKSB7XG4gICAgLy8gY29uc29sZS5sb2cob3B0aW9uKVxuICAgIC8vIGxldCBzZWxmID0gdGhpc1xuICAgIC8vIHNlbGYuYSA9IG9wdGlvbi5hXG4gIH1cbiAgb25QdWxsRG93blJlZnJlc2goKSB7XG4gICAgc2V0VGltZW91dChmdW5jdGlvbigpIHtcbiAgICAgIHdlcHkuc3RvcFB1bGxEb3duUmVmcmVzaCgpXG4gICAgfSwgMTAwMClcbiAgfVxufVxuIl19

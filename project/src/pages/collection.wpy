@@ -114,7 +114,7 @@
 </style>
 
 <template>
-  <scroll-view scroll-y class="img">
+  <scroll-view scroll-y style="height: {{height}}px; width: {{width}}px;" class="img">
     <view class="row dis-six ">
       <view wx:for="{{src}}" wx:key="index">
         <view class="boxes">
@@ -132,7 +132,6 @@
       <view class="center">
         <input />
       </view>
-      <button class="btn-area" bindtap="bindButtonTap">确认</button>
     </view>
 
   </scroll-view>
@@ -142,7 +141,7 @@
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '书架'
+    navigationBarTitleText: '添加你的书籍'
   }
 
   data = {
@@ -181,10 +180,19 @@ export default class Index extends wepy.page {
     }
   }
 
-  onLoad(option) {
-    // console.log(option)
-    // let self = this
-    // self.a = option.a
+  onLoad() {
+    let self = this
+    wepy.getSystemInfo({
+      success(res) {
+        self.height = res.windowHeight
+        self.width = res.windowWidth
+      }
+    })
+  }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
   }
 }
 </script>

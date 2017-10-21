@@ -1,5 +1,5 @@
 
-  <scroll-view scroll-y class="img">
+  <scroll-view scroll-y style="height: {{height}}px; width: {{width}}px;" class="img">
     <view class="row dis-six ">
       <view  wx:for="{{src}}" wx:key="index">
         <view class="boxes">
@@ -17,7 +17,6 @@
       <view class="center">
         <input/>
       </view>
-      <button class="btn-area" bindtap="bindButtonTap">确认</button>
     </view>
 
   </scroll-view>

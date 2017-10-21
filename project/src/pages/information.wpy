@@ -1,7 +1,7 @@
 
 <style lang="less">
 .img {
-  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg');
+  background-image: url("https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg");
   background-size: 100% 100%;
   position: fixed;
   bottom: 0;
@@ -13,22 +13,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
+.row {
+  flex-direction: row;
+  padding: 0.5rem;
+}
+
 .empty {
   margin-bottom: 5%;
-  }
+}
 .space {
   margin-top: 10%;
   margin-bottom: 5%;
-
 }
 .size {
-  height: 10rem;
-  width: 10rem;
+  height: 6rem;
+  width: 6rem;
   align-items: center;
   background: rgba(36, 36, 36, 0.5);
-  border-radius: 5px;
-  margin-bottom: 10%;
+  border-radius: 50%;
+  margin-bottom: 5%;
 }
 .view {
   display: flex;
@@ -49,9 +54,15 @@
       <image class="size" src="{{avatarUrl}}"></image>
 
       <view class="center">
-        <text class="empty">昵称:{{nickName}}</text>
-        <view class=""></view>
-        <view class="" src="{{}}"></view>
+        <view class="row">
+          <text class="empty">昵称:</text>
+          <text>{{nickName}}</text>
+        </view>
+        <view class="row">
+          <text class="empty">联系电话:</text>
+          <text>{{phonenumber}}</text>
+        </view>
+        
       </view>
 
     </view>
@@ -66,7 +77,8 @@ export default class Index extends wepy.page {
   }
   data = {
     avatarUrl: '',
-    nickName: ''
+    nickName: '',
+    phonenumber: 'unknow'
   }
 
   methods = {
@@ -84,6 +96,11 @@ export default class Index extends wepy.page {
         self.avatarUrl = res.userInfo.avatarUrl
       }
     })
+  }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
   }
 }
 </script>
