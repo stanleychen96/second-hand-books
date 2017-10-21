@@ -1,22 +1,55 @@
 
+
   <scroll-view scroll-y style="height: {{height}}px; width: {{width}}px;" class="img">
-    <view class="row dis-six ">
+    <view>
+      <view class="topright" bindtap="tap">
+        <image class="box" src="{{c3}}"/>
+      </view>
+    </view>
+
+    <view  wx:if="{{show}}" class="line"/>
+
+    <view class="dis-six">
       <view  wx:for="{{src}}" wx:key="index">
-        <view class="boxes">
-          <image class="height" src="{{item}}" bindtap="onTapImg"/>
+        <view class="row">
+          <view class="boxes">
+            <image class="height" src="{{item}}" bindtap="onTapImg"/>
+          </view>
+          <view class="space">
+            <view bindtap="showTime">使用时间:{{usetime}}</view>
+            <view bindtap="showClass">使用课程:{{whichclass}}</view>
+            <view class="row" bindtap="showDiscrible">
+              <view>简介:</view>
+              <view class="border">{{discribe}}</view>
+            </view>
+            </view>
+          </view>
         </view>
+        <view class="line"/>
       </view>
-      <view bindtap="tap">
-        <view class="boxes">
-          <image class="height" src="{{c3}}"/>
-        </view>
-      </view>
-    </view>
+    
 
-    <view  wx:if="{{show}}" class="inputContent">
+    <view wx:if="{{showTime}}" class="inputContent">
+      <view class="centerinput">
+        <input bindinput="Timeinput"/>
+      </view>
+      <button class="btn-area" bindtap="comfirmTime">确认</button>
+    </view>
+    <view wx:if="{{showClass}}" class="inputContent">
+      <view class="centerinput">
+        <input bindinput="Classinput"/>
+      </view>
+      <button class="btn-area" bindtap="comfirmClass">确认</button>
+    </view>
+    <view wx:if="{{showDiscrible}}" class="inputContent">
+      <view class="centerinput">
+        <input bindinput="Discribleinput"/>
+      </view>
+      <button class="btn-area" bindtap="comfirmDiscrible">确认</button>
+    </view>
+    <!-- <view wx:if="{{show}}" class="inputContent">
       <view class="center">
-        <input/>
+        <input />
       </view>
-    </view>
-
+    </view> -->
   </scroll-view>

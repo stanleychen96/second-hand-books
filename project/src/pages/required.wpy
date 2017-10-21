@@ -77,14 +77,14 @@
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '觅书处'
+    navigationBarTitleText: '找找有没有你想要的'
   }
 
   data = {
     book: '../images/WechatIMG165.jpeg',
     focus: false,
     inputValue: '',
-    placeholder: '输入你想寻找的二手书'
+    placeholder: '输入想寻找的二手书名'
 
   }
 
