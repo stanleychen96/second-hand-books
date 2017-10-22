@@ -25,21 +25,6 @@
   height: 100%;
 }
 
-.location {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.size {
-  width: 20%;
-  height: 20%;
-}
-
-.space {
-  margin-top: 35%;
-}
-
 .dis-six {
   // justify-content: space-between;
   // margin: 5px 60px 10px 60px;
@@ -47,12 +32,14 @@
   flex-direction: column; // 主轴方向:列
   justify-content: center;
   flex-wrap: wrap;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  margin-top: 5%;
+  // margin-top: 5%;
 }
 
 .box {
@@ -71,7 +58,6 @@
   margin-right: 0.46rem;
   border-radius: 0.4rem;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-
 }
 
 .height {
@@ -84,14 +70,13 @@
   border-radius: 0.4rem;
 }
 .space {
-  margin-top: 2.5%;
-  margin-bottom: 2.5%;
-  font-size: 16px;
+  // margin-top: 2.5%;
+  // margin-bottom: 2.5%;
+  font-size: 15px;
 }
 .line {
   width: 100%;
   height: 1px;
-  // background: rgba(36, 36, 36, 0);
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin-bottom: 4%;
   margin-top: 4%;
@@ -120,12 +105,36 @@
 
 .border {
   height: 6rem;
-  width: 10rem;
+  width: 11rem;
   align-items: center;
-  background: rgba(36, 36, 36, 0.5);
+  background: rgba(36, 36, 36, 0.3);
   border-radius: 5px;
-  margin-bottom: 1%;
+  margin-left: 1%;
+  box-shadow: 2px 2px 2px rgba(36, 36, 36, 0.3);
 }
+
+.weight {
+  font-weight: bold;
+}
+
+.shadow {
+  box-shadow: 2px 2px 2px rgba(100, 100, 100, 0.4);
+}
+
+.text {
+  text-indent: 0.5rem;
+}
+.del {
+  margin-left: 40%;
+  margin-top: 2%;
+  height: 1rem;
+  width: 1rem;
+  // box-shadow: 2px 2px 1px rgba(100, 100, 100, 0.4);
+  }
+.describe {
+  text-indent: 1.5rem;
+}
+
 .inputContent {
   position: fixed;
   top: 0;
@@ -168,25 +177,37 @@
       </view>
     </view>
 
-    <view wx:if="{{show}}" class="line"></view>
-
     <view class="dis-six">
       <view wx:for="{{src}}" wx:key="index">
         <view class="row">
           <view class="boxes">
-            <image class="height" src="{{item}}" @tap="onTapImg"></image>
+            <image class="height" src="{{item}}"></image>
           </view>
-          <view class="space">
-            <view @tap="showTime">使用时间:{{usetime}}</view>
-            <view @tap="showClass">使用课程:{{whichclass}}</view>
-            <view  class="row" @tap="showDiscrible">
-              <view>简介:</view>
-              <view class="border">{{discribe}}</view>
+            <view class="space">
+              <view class="row">
+
+                <view>
+                  <view class="row">
+                    <view class="weight">使用时间:</view>
+                    <view class="text" @tap="showTime" id="{{index}}" data-index="{{index}}">{{usetime[index]}}</view>
+                  </view>
+                  <view class="row" @tap="showClass" id="{{index}}" data-index="{{index}}">
+                    <view class="weight">使用课程:</view>
+                    <view class="text">{{whichclass[index]}}</view>
+                  </view>
+                </view>
+
+                <image class="del" src="{{del}}" @tap="del" data-index="{{index}}"></image>
+
+              </view>
+              
+              <view  class="row" @tap="showDiscrible" id="{{index}}" data-index="{{index}}">
+                <view class="weight">简介:</view>
+                <view class="border describe">{{discribe[index]}}</view>
+              </view>
             </view>
-            </view>
-          </view>
         </view>
-        <view class="line"></view>
+          <view class="line"></view>
       </view>
     </view>
 
@@ -204,15 +225,11 @@
     </view>
     <view wx:if="{{showDiscrible}}" class="inputContent">
       <view class="centerinput">
-        <input bindinput='Discribleinput' />
+        <input bindinput='Discribleinput'/>
       </view>
       <button class="btn-area" bindtap="comfirmDiscrible">确认</button>
     </view>
-    <!-- <view wx:if="{{show}}" class="inputContent">
-      <view class="center">
-        <input />
-      </view>
-    </view> -->
+
   </scroll-view>
 </template>
 
@@ -224,16 +241,17 @@ export default class Index extends wepy.page {
   }
 
   data = {
-    book: '../images/WechatIMG165.jpeg',
     c3: '../images/加.png',
     src: [],
-    usetime: 'unknow',
-    whichclass: 'unknow',
-    discribe: '添加描述',
+    del: '../images/垃圾桶.png',
+    usetime: ['unknow'],
+    whichclass: ['unknow'],
+    discribe: ['添加描述'],
     show: false,
     showTime: false,
     showClass: false,
-    showDiscrible: false
+    showDiscrible: false,
+    id: null
   }
 
   methods = {
@@ -260,44 +278,53 @@ export default class Index extends wepy.page {
         url: 'details?target=true'
       })
     },
-    showTime() {
+    showTime(e) {
       let self = this
+      self.id = e.currentTarget.id
       self.showTime = true
     },
-    showClass() {
+    showClass(e) {
       let self = this
+      self.id = e.currentTarget.id
       self.showClass = true
     },
-    showDiscrible() {
+    showDiscrible(e) {
       let self = this
+      self.id = e.currentTarget.id
       self.showDiscrible = true
     },
-    comfirmTime() {
+
+    comfirmTime(e) {
+      console.log(e)
       let self = this
       self.showTime = false
     },
-    comfirmClass() {
+    comfirmClass(e) {
       let self = this
       self.showClass = false
     },
-    comfirmDiscrible() {
+    comfirmDiscrible(e) {
       let self = this
       self.showDiscrible = false
     },
+
     Timeinput(e) {
-      console.log(e)
       let self = this
-      self.usetime = e.detail.value
+      self.usetime[self.id] = e.detail.value
     },
     Classinput(e) {
-      console.log(e)
       let self = this
-      self.whichclass = e.detail.value
+      console.log(e)
+      self.whichclass[self.id] = e.detail.value
     },
     Discribleinput(e) {
-      console.log(e)
       let self = this
-      self.discribe = e.detail.value
+      self.discribe[self.id] = e.detail.value
+    },
+    del(e) {
+      let self = this
+      const index = e.currentTarget.dataset.index
+      self.src.splice(index, 1)
     }
   }
 

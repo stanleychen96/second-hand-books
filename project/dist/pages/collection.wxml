@@ -7,29 +7,41 @@
       </view>
     </view>
 
-    <view  wx:if="{{show}}" class="line"/>
-
     <view class="dis-six">
       <view  wx:for="{{src}}" wx:key="index">
         <view class="row">
           <view class="boxes">
-            <image class="height" src="{{item}}" bindtap="onTapImg"/>
+            <image class="height" src="{{item}}"/>
           </view>
-          <view class="space">
-            <view bindtap="showTime">使用时间:{{usetime}}</view>
-            <view bindtap="showClass">使用课程:{{whichclass}}</view>
-            <view class="row" bindtap="showDiscrible">
-              <view>简介:</view>
-              <view class="border">{{discribe}}</view>
-            </view>
-            </view>
-          </view>
-        </view>
-        <view class="line"/>
-      </view>
-    
+            <view class="space">
+              <view class="row">
 
-    <view wx:if="{{showTime}}" class="inputContent">
+                <view>
+                  <view class="row">
+                    <view class="weight">使用时间:</view>
+                    <view class="text" bindtap="showTime" id="{{index}}" data-index="{{index}}">{{usetime[index]}}</view>
+                  </view>
+                  <view class="row" bindtap="showClass" id="{{index}}" data-index="{{index}}">
+                    <view class="weight">使用课程:</view>
+                    <view class="text">{{whichclass[index]}}</view>
+                  </view>
+                </view>
+
+                <image class="del" src="{{del}}" bindtap="del" data-index="{{index}}"/>
+
+              </view>
+              
+              <view class="row" bindtap="showDiscrible" id="{{index}}" data-index="{{index}}">
+                <view class="weight">简介:</view>
+                <view class="border describe">{{discribe[index]}}</view>
+              </view>
+            </view>
+        </view>
+          <view class="line"/>
+      </view>
+    </view>
+
+    <view  wx:if="{{showTime}}" class="inputContent">
       <view class="centerinput">
         <input bindinput="Timeinput"/>
       </view>
@@ -47,9 +59,5 @@
       </view>
       <button class="btn-area" bindtap="comfirmDiscrible">确认</button>
     </view>
-    <!-- <view wx:if="{{show}}" class="inputContent">
-      <view class="center">
-        <input />
-      </view>
-    </view> -->
+
   </scroll-view>
