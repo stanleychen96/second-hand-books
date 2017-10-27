@@ -1,0 +1,65 @@
+<style>
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.column {
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.ellipsis {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+.underline {
+  height: 1px;
+  width: 100%;
+  margin-left: 16%;
+  background-color: #cdcdcd;
+}
+</style>
+
+<template>
+  <view>
+    <view style="height: 1px; width: 100%; background-color: #cdcdcd;"></view>
+
+    <view class="row" style="padding: 2%; align-items: center;">
+      <image src="{{bell}}" mode="widthFix" style=" display: flex; flex-dirextion: column; width:2.5rem; margin: .4rem;"></image>
+      <view class="column" style="width: 100%;">
+        <view class="row" style="align-content: center; justify-content: space-between;">
+          <view class="row" style= "align-content: center; font-size: .9rem;">通知</view>
+          <view style="font-size: .8rem; color: #bfbfbf;">setTime</view>
+        </view>
+        <text class="ellipsis" style="font-size: .7rem; color: #bfbfbf; line-height: 1.3rem;">{{inform}}</text>
+      </view>  
+    </view>
+    <view class="underline"></view>
+  </view> 
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的消息'
+  }
+
+  data = {
+    inform: '醒来觉得甚是爱你： 一份关于爱情，宇宙与星空的新书报告',
+    bell: '../images/bell.png'
+  }
+  methods = {
+  }
+  onLoad(option) {}
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+}
+</script>

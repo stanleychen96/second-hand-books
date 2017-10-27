@@ -1,20 +1,52 @@
 
-  <view class="img">
-    <view class="center space">
-
-      <image class="size" src="{{avatarUrl}}"/>
-
+  <view>
+    <view style="margin: 5%;">
       <view class="center">
-        <view class="row">
-          <text class="empty">昵称:</text>
-          <text>{{nickName}}</text>
-        </view>
-        <view class="row">
-          <text class="empty">联系电话:</text>
-          <text>{{phonenumber}}</text>
-        </view>
-        
+        <image class="avatarsize" src="{{avatarUrl}}"/>
+        <text style="margin-bottom: 5%;">{{nickName}}</text>
       </view>
 
+      <navigator url="./readtime" open-type="navigate" hover-class="none">
+        <view class="spacebetween">
+          <view style="width: 50%;">
+            <view class="column">
+              <view style="font-size: 1rem;">{{readtime}}分钟</view>
+              <text style="color: gray; margin-top: 0.5rem; font-size: 0.8rem">读书时长</text>
+            </view>
+          </view>
+          
+          <view style="background-color: gray; width: 1px; height: 1rem;"/>
+          
+          <view class="spacebetween" style="width: 50%;">
+            <view/>
+            <view class="column">
+              <view style="font-size: 1rem;">{{colnumber}}</view>
+              <text style="color: gray; margin-top: 0.5rem; font-size: 0.8rem">蜗牛壳</text>
+            </view>
+            <view calss="flexend" style="color: gray;"> > </view>
+          </view>
+         </view>
+      </navigator>
+
     </view>
+
+    <view style="width: 100%; height: 0.5rem; background-color: whitesmoke;"/>
+
+    <view style="margin-top: 3%; margin-bottom: 3%;">
+      <view  wx:for="{{userinfo}}" wx:key="index" data-index="{{index}}" bindtap="tap">
+        <view style="padding: 5%;">
+          <view class="spacebetween">
+            <view style="align-items: center;">
+              <image style="height: 1rem; width: 1rem; margin-right: 1rem;" src="{{item.icon}}"/>
+              <text>{{item.desc}}</text>
+            </view>
+            <view style="display: flex; flex-direction: row; align-items: center;">
+              <view style="display: flex; margin-right: 1rem; flex-direction: row;font-size: .8rem;">{{item.sth}}</view>
+              <view class="flexend" style="color: gray;"> > </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
   </view>

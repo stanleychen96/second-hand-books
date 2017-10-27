@@ -1,173 +1,27 @@
-<style lang="less">
-.img {
-  background-image: url('https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg');
-  background-size: 100% 100%;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
+<style>
 
-.space {
-  margin-top: 5%;
-  margin-bottom: 5%;
-}
-
-.size {
-  height: 10rem;
-  width: 8rem;
-  align-items: center;
-  background: rgba(36, 36, 36, 0.5);
-  border-radius: 5px;
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.discribe {
-  height: 12rem;
-  width: 15rem;
-  align-items: center;
-  background: rgba(36, 36, 36, 0.5);
-  border-radius: 5px;
-  margin-bottom: 1%;
-}
-
-.inputContent {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(36, 36, 36, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn-area {
-  margin: 0;
-}
-
-.inputContent {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-color: rgba(36, 36, 36, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.centerinput {
-  padding: 1rem;
-  background-color: rgba(36, 36, 36, 0.9);
-  border-radius: 10px;
-}
 </style>
 
 <template>
-  <view class="img">
-
-    <view class="center space">
-      <image class="size" src="{{bookurl}}"></image>
-      <view class="space">
-        <view>使用时间:{{usetime}}</view>
-        <view>使用课程:{{whichclass}}</view>
-      </view>
-      <view class="discribe">
-        <view class="space">{{discribe}}</view>
-      </view>
-    </view>
-
-    <view wx:if="{{showTime}}" class="inputContent">
-      <view class="centerinput">
-        <input bindinput="Timeinput"/>
-      </view>
-      <button class="btn-area" bindtap="comfirmTime">确认</button>
-    </view>
-    <view wx:if="{{showClass}}" class="inputContent">
-      <view class="centerinput">
-        <input bindinput="Classinput"/>
-      </view>
-      <button class="btn-area" bindtap="comfirmClass">确认</button>
-    </view>
-    <view wx:if="{{showDiscrible}}" class="inputContent">
-      <view class="centerinput">
-        <input bindinput='Discribleinput' />
-      </view>
-      <button class="btn-area" bindtap="comfirmDiscrible">确认</button>
-    </view>
-
-  </view>
+<view class="">
+</view>
 </template>
 
 <script>
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '详情 '
+    navigationBarTitleText: ''
   }
   data = {
-    usetime: 'unknow',
-    whichclass: 'unknow',
-    discribe: '',
-    // target: false,
-    showTime: false,
-    showClass: false,
-    showDiscrible: false
   }
   methods = {
-    OnTapWord() {
-      let self = this
-      self.show = true
-    },
-    showTime() {
-      let self = this
-      self.showTime = true
-    },
-    showClass() {
-      let self = this
-      self.showClass = true
-    },
-    showDiscrible() {
-      let self = this
-      self.showDiscrible = true
-    },
-    comfirmTime() {
-      let self = this
-      self.showTime = false
-    },
-    comfirmClass() {
-      let self = this
-      self.showClass = false
-    },
-    comfirmDiscrible() {
-      let self = this
-      self.showDiscrible = false
-    },
-    Timeinput(e) {
-      console.log(e)
-      let self = this
-      self.usetime = e.detail.value
-    },
-    Classinput(e) {
-      console.log(e)
-      let self = this
-      self.whichclass = e.detail.value
-    },
-    Discribleinput(e) {
-      console.log(e)
-      let self = this
-      self.discribe = e.detail.value
-    }
   }
 
-  onLoad(option) {
+  onLoad (options) {
+    this.setData({
+      title: options.title
+    })
   }
   onPullDownRefresh() {
     setTimeout(function() {

@@ -1,0 +1,67 @@
+'use strict';
+
+module.exports = [{
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}, {
+  icon: '../images/WechatIMG36.jpeg',
+  title: '上海译文'
+}];
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbnRlbnQuanMiXSwibmFtZXMiOlsibW9kdWxlIiwiZXhwb3J0cyIsImljb24iLCJ0aXRsZSJdLCJtYXBwaW5ncyI6Ijs7QUFBQUEsT0FBT0MsT0FBUCxHQUFpQixDQUNmO0FBQ0VDLFFBQU0sNEJBRFI7QUFFRUMsU0FBTztBQUZULENBRGUsRUFLZjtBQUNFRCxRQUFNLDRCQURSO0FBRUVDLFNBQU87QUFGVCxDQUxlLEVBU2Y7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FUZSxFQWFmO0FBQ0VELFFBQU0sNEJBRFI7QUFFRUMsU0FBTztBQUZULENBYmUsRUFpQmY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FqQmUsRUFxQmY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FyQmUsRUF5QmY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0F6QmUsRUE2QmY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0E3QmUsRUFpQ2Y7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FqQ2UsRUFxQ2Y7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FyQ2UsRUF5Q2Y7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0F6Q2UsRUE2Q2Y7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0E3Q2UsRUFpRGY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FqRGUsRUFxRGY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FyRGUsRUF5RGY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0F6RGUsRUE2RGY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0E3RGUsRUFpRWY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FqRWUsRUFxRWY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FyRWUsRUF5RWY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0F6RWUsRUE2RWY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0E3RWUsRUFpRmY7QUFDRUQsUUFBTSw0QkFEUjtBQUVFQyxTQUFPO0FBRlQsQ0FqRmUsQ0FBakIiLCJmaWxlIjoiY29udGVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0gW1xuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9LFxuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9LFxuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9LFxuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9LFxuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9LFxuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9LFxuICB7XG4gICAgaWNvbjogJy4uL2ltYWdlcy9XZWNoYXRJTUczNi5qcGVnJyxcbiAgICB0aXRsZTogJ+S4iua1t+ivkeaWhydcbiAgfSxcbiAge1xuICAgIGljb246ICcuLi9pbWFnZXMvV2VjaGF0SU1HMzYuanBlZycsXG4gICAgdGl0bGU6ICfkuIrmtbfor5HmlocnXG4gIH0sXG4gIHtcbiAgICBpY29uOiAnLi4vaW1hZ2VzL1dlY2hhdElNRzM2LmpwZWcnLFxuICAgIHRpdGxlOiAn5LiK5rW36K+R5paHJ1xuICB9XG5dXG4iXX0=

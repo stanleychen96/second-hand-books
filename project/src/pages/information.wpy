@@ -1,35 +1,25 @@
 
 <style lang="less">
-.img {
-  background-image: url("https://img.25pp.com/uploadfile/bizhi/iphone6p/20151123/1448241981522025_390x690.jpg");
-  background-size: 100% 100%;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-}
 .center {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
-.row {
-  flex-direction: row;
-  padding: 0.5rem;
+.spacebetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
-.empty {
-  margin-bottom: 5%;
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.space {
-  margin-top: 10%;
-  margin-bottom: 5%;
-}
-.size {
-  height: 6rem;
-  width: 6rem;
+.avatarsize {
+  height: 5rem;
+  width: 5rem;
   align-items: center;
   background: rgba(36, 36, 36, 0.5);
   border-radius: 50%;
@@ -45,51 +35,128 @@
   font-size: 0.5rem;
   color: gray;
 }
+.flexend {
+  justify-content: flex-end;
+}
 </style>
 
 <template>
-  <view class="img">
-    <view class="center space">
-
-      <image class="size" src="{{avatarUrl}}"></image>
-
+  <view>
+    <view style="margin: 5%;">
       <view class="center">
-        <view class="row">
-          <text class="empty">昵称:</text>
-          <text>{{nickName}}</text>
-        </view>
-        <view class="row">
-          <text class="empty">联系电话:</text>
-          <text>{{phonenumber}}</text>
-        </view>
-        
+        <image class="avatarsize" src="{{avatarUrl}}"></image>
+        <text style="margin-bottom: 5%;">{{nickName}}</text>
       </view>
 
+      <navigator url="./readtime" open-type="navigate" hover-class="none">
+        <view class="spacebetween">
+          <view style="width: 50%;">
+            <view class="column">
+              <view style="font-size: 1rem;">{{readtime}}分钟</view>
+              <text style="color: gray; margin-top: 0.5rem; font-size: 0.8rem">读书时长</text>
+            </view>
+          </view>
+          
+          <view style="background-color: gray; width: 1px; height: 1rem;"></view>
+          
+          <view class="spacebetween" style="width: 50%;">
+            <view></view>
+            <view class="column">
+              <view style="font-size: 1rem;">{{colnumber}}</view>
+              <text style="color: gray; margin-top: 0.5rem; font-size: 0.8rem">蜗牛壳</text>
+            </view>
+            <view calss="flexend" style="color: gray;"> > </view>
+          </view>
+         </view>
+      </navigator>
+
     </view>
+
+    <view style="width: 100%; height: 0.5rem; background-color: whitesmoke;"></view>
+
+    <view style="margin-top: 3%; margin-bottom: 3%;">
+      <view wx:for="{{userinfo}}" wx:key="index" data-index="{{index}}" @tap="tap">
+        <view style="padding: 5%;">
+          <view class="spacebetween">
+            <view style="align-items: center;">
+              <image style="height: 1rem; width: 1rem; margin-right: 1rem;" src="{{item.icon}}"></image>
+              <text>{{item.desc}}</text>
+            </view>
+            <view style="display: flex; flex-direction: row; align-items: center;">
+              <view style="display: flex; margin-right: 1rem; flex-direction: row;font-size: .8rem;">{{item.sth}}</view>
+              <view class="flexend" style="color: gray;"> > </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
   </view>
 </template>
 
 <script>
 import wepy from 'wepy'
+import content from '../util/info.js'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '书架管理员'
+    navigationBarTitleText: ''
   }
   data = {
     avatarUrl: '',
-    nickName: '',
-    phonenumber: 'unknow'
+    nickName: '无花果',
+    readtime: '0',
+    colnumber: '0',
+    userinfo: []
+
   }
 
   methods = {
-    //   tap() {
-    //     wepy.navigateTo({
-    //       url: './user'
-    //     })
-    //   }
+    tap(e) {
+      console.log(e)
+      const item = e.currentTarget.dataset.index
+      console.log(item)
+      switch (item) {
+        case 0:
+          wepy.navigateTo({
+            url: './mymessage'
+          })
+          break
+        case 1:
+          wepy.navigateTo({
+            url: './review'
+          })
+          break
+        case 2:
+          wepy.navigateTo({
+            url: './mymessage'
+          })
+          break
+        case 3:
+          wepy.navigateTo({
+            url: './mymessage'
+          })
+          break
+        case 4:
+          wepy.navigateTo({
+            url: './mymessage'
+          })
+          break
+        case 5:
+          wepy.navigateTo({
+            url: './mymessage'
+          })
+          break
+        case 6:
+          wepy.navigateTo({
+            url: './mymessage'
+          })
+          break
+      }
+    }
   }
   onLoad(option) {
     let self = this
+    self.userinfo = content
     wepy.getUserInfo({
       success(res) {
         self.nickName = res.userInfo.nickName

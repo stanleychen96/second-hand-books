@@ -1,0 +1,67 @@
+<style lang="less">
+.background {
+  background: whitesmoke;
+  background-size: 100% 100%;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
+.center {
+  display: flex; // 弹性布局
+  flex-direction: column; // 主轴方向:列
+  justify-content: center; // 设置主轴方向的对齐方式:居中
+  align-items: center; // 项目排列方式:居中
+}
+.border {
+  background: white;
+  margin-top: 35%;
+  border-radius: 3%;
+  box-shadow: 4px 6px 5px 1px rgba(0, 0, 0, 0.1);
+  border-right: 0.5px solid rgba(0, 0, 0, 0.2);
+}
+
+.books {
+  height: 3rem;
+  width: 3rem;
+}
+</style>
+
+<template>
+  <view class="background">
+    <view class="center">
+      <view class="border center" @tap="findmore">
+        <image class="books" style="margin: 3rem 3rem 1rem 3rem;" src="{{findbooks}}"></image>
+        <text style="color: #707070; font-size: .8rem; margin: 1rem 3rem .5rem 3rem; font-weight: bolder;">发现更多图书</text>
+        <view style="font-weight: bolder; margin: 1rem 3rem 2.5rem 3rem;">→</view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '1'
+  }
+
+  data = {
+    findbooks: '../images/findbooks.png'
+  }
+
+  methods = {
+    findmore() {
+      wepy.navigateTo({
+        url: './review'
+      })
+    }
+  }
+
+  onLoad() {}
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+}
+</script>

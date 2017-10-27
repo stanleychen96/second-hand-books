@@ -1,0 +1,30 @@
+<style>
+
+</style>
+
+<template>
+  <view>
+    
+  </view> 
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的书评'
+  }
+
+  data = {
+
+  }
+  methods = {
+  }
+  onLoad(option) {}
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+}
+</script>

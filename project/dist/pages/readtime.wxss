@@ -1,0 +1,1 @@
+.center{display:flex;flex-direction:column;justify-content:space-between;align-items:center}.border{background-color:sandybrown;border-radius:1rem;padding:.3rem 1.5rem;color:white;font-size:15px}

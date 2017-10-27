@@ -1,17 +1,55 @@
 
+  <view class="globalmargin">
+    <view class="row">
+      <navigator class="input" url="./search" open-type="navigate">
+        <view src="{{}}">🔍 搜索</view>
+      </navigator>
+      <view class="QRcode" src="{{}}"/>
+    </view>
 
-  <scroll-view scroll-y style="height: {{height}}px; width: {{width}}px;" class="img">
+    <view class="row spacebetween margin">
+      <view class="size column" style="position:relative;">
+        <view class="column" style="position: absolute;">
+          <text style="color: white; letter-space: 15px;">与动物</text>
+          <text style="color: white; font-size: .6rem;">with animal</text>
+        </view>
+        <image style="width:100%; height:100%;" src="{{left}}"/>
+      </view> 
+    <view class="size column" style="position:relative;">
+        <view class="column" style="position: absolute;">
+          <text style="color: white; letter-space: 15px;">与自然</text>
+          <text style="color: white; font-size: .6rem;">with environment</text>
+        </view>
+        <image style="width:100%; height:100%;" src="{{right}}"/>
+      </view>
+    </view>
+
+    <view class="row">
+      <view class="line"/>
+      <text class="classify" style="word">分类</text>
+      <view class="line"/>
+    </view>
+
+    <view class="display">
+      <view  wx:for="{{box}}" wx:key="index" id="{{index}}" class="row spacebetween" style="position:relative;">
+        <text style="color: white; position: absolute; top: 0; margin: 5% 0 0 10%;">{{item.title}}</text>
+        <image mode="widthFix" class="imgsize" src="{{item.icon}}"/>
+      </view>
+    </view>
+
+  </view>
+  <!-- <scroll-view scroll-y style="height: {{height}}px; width: {{width}}px;" class="img">
     <view>
       <view class="topright" bindtap="tap">
-        <image class="box" src="{{c3}}"/>
+        <image class="box" src="{{c3}}"></image>
       </view>
     </view>
 
     <view class="dis-six">
-      <view  wx:for="{{src}}" wx:key="index">
+      <view wx:for="{{src}}" wx:key="index">
         <view class="row">
           <view class="boxes">
-            <image class="height" src="{{item}}"/>
+            <image class="height" src="{{item}}"></image>
           </view>
             <view class="space">
               <view class="row">
@@ -27,21 +65,21 @@
                   </view>
                 </view>
 
-                <image class="del" src="{{del}}" bindtap="del" data-index="{{index}}"/>
+                <image class="del" src="{{del}}" bindtap="del" data-index="{{index}}"></image>
 
               </view>
               
-              <view class="row" bindtap="showDiscrible" id="{{index}}" data-index="{{index}}">
+              <view  class="row" bindtap="showDiscrible" id="{{index}}" data-index="{{index}}">
                 <view class="weight">简介:</view>
                 <view class="border describe">{{discribe[index]}}</view>
               </view>
             </view>
         </view>
-          <view class="line"/>
+          <view class="line"></view>
       </view>
     </view>
 
-    <view  wx:if="{{showTime}}" class="inputContent">
+    <view wx:if="{{showTime}}" class="inputContent">
       <view class="centerinput">
         <input bindinput="Timeinput"/>
       </view>
@@ -55,9 +93,9 @@
     </view>
     <view wx:if="{{showDiscrible}}" class="inputContent">
       <view class="centerinput">
-        <input bindinput="Discribleinput"/>
+        <input bindinput='Discribleinput'/>
       </view>
       <button class="btn-area" bindtap="comfirmDiscrible">确认</button>
     </view>
 
-  </scroll-view>
+  </scroll-view> -->

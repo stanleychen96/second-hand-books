@@ -1,0 +1,16 @@
+
+  <view>
+    <view style="height: 1px; width: 100%; background-color: #cdcdcd;"/>
+
+    <view class="row" style="padding: 2%; align-items: center;">
+      <image src="{{bell}}" mode="widthFix" style=" display: flex; flex-dirextion: column; width:2.5rem; margin: .4rem;"/>
+      <view class="column" style="width: 100%;">
+        <view class="row" style="align-content: center; justify-content: space-between;">
+          <view class="row" style="align-content: center; font-size: .9rem;">通知</view>
+          <view style="font-size: .8rem; color: #bfbfbf;">setTime</view>
+        </view>
+        <text class="ellipsis" style="font-size: .7rem; color: #bfbfbf; line-height: 1.3rem;">{{inform}}</text>
+      </view>  
+    </view>
+    <view class="underline"/>
+  </view>

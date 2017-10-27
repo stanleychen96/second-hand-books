@@ -1,0 +1,10 @@
+
+  <view class="background">
+    <view class="center">
+      <view class="border center" bindtap="findmore">
+        <image class="books" style="margin: 3rem 3rem 1rem 3rem;" src="{{findbooks}}"/>
+        <text style="color: #707070; font-size: .8rem; margin: 1rem 3rem .5rem 3rem; font-weight: bolder;">发现更多图书</text>
+        <view style="font-weight: bolder; margin: 1rem 3rem 2.5rem 3rem;">→</view>
+      </view>
+    </view>
+  </view>

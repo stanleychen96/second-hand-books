@@ -1,0 +1,62 @@
+<style lang="less">
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.border {
+  background-color: sandybrown;
+  border-radius: 1rem;
+  padding: 0.3rem 1.5rem;
+  color: white;
+  font-size: 15px; 
+}
+
+</style>
+
+<template>
+  <view>
+    <view class="center">
+      <view style="font-size: 1.8rem; margin-top: 5%; margin-bottom: 3%;">{{shell}}</view>
+      <view style="flex-direction: row; margin-bottom: 5%;">
+        <text style="font-size: 0.8rem; color: gray;">🐌 蜗牛壳</text>
+      </view> 
+      <view class="border" >兑换电子书</view>
+      <view @tap="tap" style="text-align: center; font-size: 12px; margin:5% 14.5%; color: gray;">{{word}}</view>
+      <view style="width: 100%; background-color: whitesmoke; height: 5px;"></view>
+    </view>
+    <view>
+      <text style="margin: 5% 0 5% 5%; font-size: 15px; font-weight:bold;">阅历: {{howlong}}分钟</text>
+    </view>
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '已兑换的电子书'
+  }
+  data = {
+    shell: '0',
+    word: '阅读1小时奖励1个蜗牛壳，可兑换电子书﹀',
+    howlong: '0'
+  }
+
+  methods = {
+    tap() {
+      let self = this
+      console.log('...')
+      self.word = '阅读1小时奖励1个蜗牛壳，攒够即可兑换电子书无限制阅读权；蜗牛兑换价格不视为电子书实际定价；各端蜗牛壳各自计算使用；未登录用户的蜗牛壳及兑换数据仅保留在当前设备'
+    }
+  }
+  onLoad(option) {
+  }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+}
+</script>

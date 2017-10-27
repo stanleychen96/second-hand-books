@@ -1,0 +1,15 @@
+
+  <view>
+    <view class="center">
+      <view style="font-size: 1.8rem; margin-top: 5%; margin-bottom: 3%;">{{shell}}</view>
+      <view style="flex-direction: row; margin-bottom: 5%;">
+        <text style="font-size: 0.8rem; color: gray;">🐌 蜗牛壳</text>
+      </view> 
+      <view class="border">兑换电子书</view>
+      <view bindtap="tap" style="text-align: center; font-size: 12px; margin:5% 14.5%; color: gray;">{{word}}</view>
+      <view style="width: 100%; background-color: whitesmoke; height: 5px;"/>
+    </view>
+    <view>
+      <text style="margin: 5% 0 5% 5%; font-size: 15px; font-weight:bold;">阅历: {{howlong}}分钟</text>
+    </view>
+  </view>
