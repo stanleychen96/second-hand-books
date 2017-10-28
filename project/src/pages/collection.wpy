@@ -13,7 +13,7 @@
 .row {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .column {
   display: flex;
@@ -25,15 +25,16 @@
   justify-content: space-between;
 }
 .input {
-  border: 1px solid black;
-  background: #F7F7F7	;
-  width: 85%;
+  border: 1px solid #cdcdcd;
+  background-color: #cdcdcd;
+  width: 80%;
   border-radius: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
   background-attachment: fixed;
+  z-index: 100;
 }
 .QRcode {
   height: 1.5rem;
@@ -77,9 +78,11 @@
   <view class="globalmargin">
     <view class="row">
       <navigator class="input" url="./search" open-type="navigate">
-        <view src="{{}}">🔍 搜索</view>
+        <view style="color: gray">🔍 搜索</view>
       </navigator>
-      <view  class="QRcode" src="{{}}"></view>
+      <view style="display: flex; justify-content: flex-end; width: 100%;">
+        <view  class="QRcode" src="{{}}"></view>
+      </view>
     </view>
 
     <view class="row spacebetween margin">
@@ -113,72 +116,11 @@
     </view>
 
   </view>
-  <!-- <scroll-view scroll-y style="height: {{height}}px; width: {{width}}px;" class="img">
-    <view>
-      <view class="topright" @tap="tap">
-        <image class="box" src="{{c3}}"></image>
-      </view>
-    </view>
-
-    <view class="dis-six">
-      <view wx:for="{{src}}" wx:key="index">
-        <view class="row">
-          <view class="boxes">
-            <image class="height" src="{{item}}"></image>
-          </view>
-            <view class="space">
-              <view class="row">
-
-                <view>
-                  <view class="row">
-                    <view class="weight">使用时间:</view>
-                    <view class="text" @tap="showTime" id="{{index}}" data-index="{{index}}">{{usetime[index]}}</view>
-                  </view>
-                  <view class="row" @tap="showClass" id="{{index}}" data-index="{{index}}">
-                    <view class="weight">使用课程:</view>
-                    <view class="text">{{whichclass[index]}}</view>
-                  </view>
-                </view>
-
-                <image class="del" src="{{del}}" @tap="del" data-index="{{index}}"></image>
-
-              </view>
-              
-              <view  class="row" @tap="showDiscrible" id="{{index}}" data-index="{{index}}">
-                <view class="weight">简介:</view>
-                <view class="border describe">{{discribe[index]}}</view>
-              </view>
-            </view>
-        </view>
-          <view class="line"></view>
-      </view>
-    </view>
-
-    <view wx:if="{{showTime}}" class="inputContent">
-      <view class="centerinput">
-        <input bindinput="Timeinput"/>
-      </view>
-      <button class="btn-area" bindtap="comfirmTime">确认</button>
-    </view>
-    <view wx:if="{{showClass}}" class="inputContent">
-      <view class="centerinput">
-        <input bindinput="Classinput"/>
-      </view>
-      <button class="btn-area" bindtap="comfirmClass">确认</button>
-    </view>
-    <view wx:if="{{showDiscrible}}" class="inputContent">
-      <view class="centerinput">
-        <input bindinput='Discribleinput'/>
-      </view>
-      <button class="btn-area" bindtap="comfirmDiscrible">确认</button>
-    </view>
-
-  </scroll-view> -->
 </template>
 
 <script>
 import wepy from 'wepy'
-import content from '../util/content.js'
+import content from '../util/content'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: ''

@@ -1,6 +1,8 @@
 
+    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+        
 <view class="global">
-  <view class="card contentcolumn" style="margin-top: 1px;"  wx:for="{{lead}}" wx:key="index" id="{{index}}" data-index="{{index}}">
+  <view class="card contentcolumn" style="margin-top: 1px;">
 
       <view class="row authorview margin">
         <image class="authorAvator" src="{{item.avatarUrl}}"/>
@@ -13,21 +15,23 @@
 
       <view class="margin">
         <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text">{{item.title}}</text>
+        <text class="text">{{$leadtable$title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a; ">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{item.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
         <view class="row" style="color: #bfbfbf;">
           <view class="bottomfont">{{item.tapnumber}}点击</view>
           <view class="bottomfont">·{{item.relevant}}</view>
         </view>
-        <view class="row flexend bottomfont" bindtap="like" data-index="{{index}}">
-          <view class="bottomfont" style="color:{{color[index]}}">{{item.like}}</view>
-          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{color[index]}};" src="{{imglike[index]}}"/>
+        <view class="row flexend bottomfont" bindtap="$leadtable$like" data-com-index="{{index}}">
+          <view class="bottomfont" style="color:{{$leadtable$color}}">{{item.like}}</view>
+          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{$leadtable$color}};" src="{{$leadtable$imglike}}"/>
         </view>
       </view>
 
   </view>
 </view>
+
+    </block>

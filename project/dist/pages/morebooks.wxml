@@ -1,0 +1,11 @@
+
+  <view class="global">
+    <view class="display" style="justify-content: space-between; margin: 0 5%;">
+      <view class="row"  wx:for="{{bookcover}}" wx:key="index">
+        <view class="column">
+          <image src="{{item.bookcover}}" mode="widthFix" style=" width: 24vw; margin-top: 15%;"/>
+          <text class="text" style="width: 24vw; margin-top: 10%;">{{item.desc}}</text>
+        </view>      
+      </view>
+    </view>
+  </view>

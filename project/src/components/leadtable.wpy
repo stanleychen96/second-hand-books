@@ -90,7 +90,7 @@
 
 <template>
 <view class="global">
-  <view class="card contentcolumn" style="margin-top: 1px;" wx:for="{{lead}}" wx:key="index" id="{{index}}" data-index="{{index}}">
+  <view class="card contentcolumn" style="margin-top: 1px;">
 
       <view class="row authorview margin">
         <image class="authorAvator" src="{{item.avatarUrl}}"></image>
@@ -103,19 +103,19 @@
 
       <view class="margin">
         <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text">{{item.title}}</text>
+        <text class="text">{{title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a; ">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{item.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
         <view class="row" style="color: #bfbfbf;">
           <view class="bottomfont">{{item.tapnumber}}点击</view>
           <view class="bottomfont">·{{item.relevant}}</view>
         </view>
-        <view class="row flexend bottomfont" @tap="like" data-index="{{index}}">
-          <view class="bottomfont" style="color:{{color[index]}}">{{item.like}}</view>
-          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{color[index]}};" src="{{imglike[index]}}"></image>
+        <view class="row flexend bottomfont" @tap="like">
+          <view class="bottomfont" style="color:{{color}}">{{item.like}}</view>
+          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{color}};" src="{{imglike}}"></image>
         </view>
       </view>
 
@@ -125,39 +125,24 @@
 
 <script>
 import wepy from 'wepy'
-import content from '../util/lead'
-export default class Index extends wepy.page {
+export default class Leadtable extends wepy.component {
   config = {
-    navigationBarTitleText: '领读 '
+    navigationBarTitleText: '领读'
   }
   data = {
-
-    imglike: ['../images/thumbsup.png'],
-    lead: [],
-    color: ['#bfbfbf']
+    imglike: '../images/thumbsup.png',
+    color: '#bfbfbf'
   }
   methods = {
     like(e) {
       let self = this
       console.log(e)
-      console.log(e.currentTarget.dataset.index)
-      const item = e.currentTarget.dataset.index
-      // self.setData({
-      //   color[item]: '#e09664'
-      // })
-      self.color[item] = '#e09664'
-      self.imglike[item] = '../images/afterlike.png'
+      self.color = '#e09664'
+      self.imglike = '../images/afterlike.png'
     }
   }
 
   onLoad() {
-    let self = this
-    self.lead = content
-  }
-  onPullDownRefresh() {
-    setTimeout(function() {
-      wepy.stopPullDownRefresh()
-    }, 1000)
   }
 }
 </script>

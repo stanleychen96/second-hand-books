@@ -52,7 +52,7 @@ export default class Index extends wepy.page {
   methods = {
     findmore() {
       wepy.navigateTo({
-        url: './review'
+        url: './morebooks'
       })
     }
   }

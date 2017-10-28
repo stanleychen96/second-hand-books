@@ -16,7 +16,9 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
+      'pages/train',
       'pages/desk',
+      'pages/morebooks',
       'pages/collection',
       'pages/lead',
       'pages/information',

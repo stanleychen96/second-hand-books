@@ -1,0 +1,39 @@
+<style>
+
+</style>
+
+<template>
+    <repeat for="{{list}}" key="index" index="index" item="item">
+        <leadtable :item="item"></leadtable>
+    </repeat>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import Leadtable from '../components/leadtable'
+  import lead from '../util/lead'
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: '我的书评'
+    }
+    components = {
+      leadtable: Leadtable
+    }
+    data = {
+      list: []
+    }
+    methods = {
+    }
+    onLoad(option) {
+      let self = this
+      self.list = lead
+      console.log(lead)
+      console.log(self.list[1])
+    }
+    onPullDownRefresh() {
+      setTimeout(function() {
+        wepy.stopPullDownRefresh()
+      }, 1000)
+    }
+  }
+</script>
