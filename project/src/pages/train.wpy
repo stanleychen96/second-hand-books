@@ -3,8 +3,8 @@
 </style>
 
 <template>
-    <repeat for="{{list}}" key="index" index="index" item="item">
-        <leadtable :item="item"></leadtable>
+    <repeat for="{{list}}" key="index" index="index" item="getinfo">
+      <leadtable :open="getinfo" @childFn.user="parentFn"></leadtable>
     </repeat>
 </template>
 
@@ -16,20 +16,23 @@
     config = {
       navigationBarTitleText: '我的书评'
     }
+
     components = {
       leadtable: Leadtable
     }
+
     data = {
-      list: []
+      list: lead
     }
+
     methods = {
+      parentFn(num) {
+        console.log(num)
+      }
     }
-    onLoad(option) {
-      let self = this
-      self.list = lead
-      console.log(lead)
-      console.log(self.list[1])
-    }
+
+    onLoad(option) {}
+
     onPullDownRefresh() {
       setTimeout(function() {
         wepy.stopPullDownRefresh()

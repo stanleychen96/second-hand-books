@@ -25,8 +25,8 @@
   justify-content: space-between;
 }
 .input {
-  border: 1px solid #cdcdcd;
-  background-color: #cdcdcd;
+  border: 1px solid #e6e6e6;
+  background-color: #e6e6e6;
   width: 80%;
   border-radius: 3rem;
   display: flex;
@@ -39,7 +39,6 @@
 .QRcode {
   height: 1.5rem;
   width: 1.5rem;
-  background-color: gray;
   margin-left: 5%;
 }
 .margin {
@@ -80,8 +79,8 @@
       <navigator class="input" url="./search" open-type="navigate">
         <view style="color: gray">🔍 搜索</view>
       </navigator>
-      <view style="display: flex; justify-content: flex-end; width: 100%;">
-        <view  class="QRcode" src="{{}}"></view>
+      <view style="display: flex; justify-content: flex-end; width: 100%;" @tap="scancode">
+        <image  class="QRcode" src="{{QRcode}}"></image>
       </view>
     </view>
 
@@ -129,10 +128,18 @@ export default class Index extends wepy.page {
   data = {
     box: [],
     left: '../images/Weanimal.jpeg',
-    right: '../images/Weworld.jpeg'
+    right: '../images/Weworld.jpeg',
+    QRcode: '../images/scanCode.png'
   }
 
   methods = {
+    scancode() {
+      wepy.scanCode({
+        success: (res) => {
+          console.log(res)
+        }
+      })
+    }
   }
 
   onLoad() {
@@ -143,6 +150,22 @@ export default class Index extends wepy.page {
     setTimeout(function() {
       wepy.stopPullDownRefresh()
     }, 1000)
+  }
+  onShareAppMessage(res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '自定义转发标题',
+      path: '/page/user?id=123',
+      success: function(res) {
+        // 转发成功
+      },
+      fail: function(res) {
+        // 转发失败
+      }
+    }
   }
 }
 </script>

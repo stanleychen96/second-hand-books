@@ -16,7 +16,7 @@ import 'wepy-async-function'
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/train',
+      // 'pages/train',
       'pages/desk',
       'pages/morebooks',
       'pages/collection',
@@ -28,7 +28,7 @@ export default class extends wepy.app {
       'pages/review'
     ],
     window: {
-      backgroundTextStyle: 'light',
+      backgroundTextStyle: 'dack',
       navigationBarBackgroundColor: 'white',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black',

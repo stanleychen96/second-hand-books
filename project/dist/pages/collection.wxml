@@ -4,8 +4,8 @@
       <navigator class="input" url="./search" open-type="navigate">
         <view style="color: gray">🔍 搜索</view>
       </navigator>
-      <view style="display: flex; justify-content: flex-end; width: 100%;">
-        <view class="QRcode" src="{{}}"/>
+      <view style="display: flex; justify-content: flex-end; width: 100%;" bindtap="scancode">
+        <image class="QRcode" src="{{QRcode}}"/>
       </view>
     </view>
 

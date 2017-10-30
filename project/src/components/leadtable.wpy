@@ -93,29 +93,29 @@
   <view class="card contentcolumn" style="margin-top: 1px;">
 
       <view class="row authorview margin">
-        <image class="authorAvator" src="{{item.avatarUrl}}"></image>
-        <text style="font-size:15px;">{{item.authorName}}</text>
+        <image class="authorAvator" src="{{open.avatarUrl}}"></image>
+        <text style="font-size:15px;">{{open.authorName}}</text>
       </view>
 
       <view class="columncenter margin">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.icon}}"></image>
+        <image class="imgsize" style="border-radius: 0.3rem;" src="{{open.icon}}"></image>
       </view>
 
       <view class="margin">
-        <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text">{{title}}</text>
+        <text class="label" style="color: white;">{{open.label}}</text>
+        <text class="text">{{open.title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{open.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
         <view class="row" style="color: #bfbfbf;">
-          <view class="bottomfont">{{item.tapnumber}}点击</view>
-          <view class="bottomfont">·{{item.relevant}}</view>
+          <view class="bottomfont">{{open.tapnumber}}点击</view>
+          <view class="bottomfont">{{open.relevant}}</view>
         </view>
         <view class="row flexend bottomfont" @tap="like">
-          <view class="bottomfont" style="color:{{color}}">{{item.like}}</view>
-          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{color}};" src="{{imglike}}"></image>
+          <view class="bottomfont" style="color:{{open.color[index]}}">{{open.like}}</view>
+          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{open.color[index]}};" src="{{open.imglike[index]}}"></image>
         </view>
       </view>
 
@@ -126,23 +126,21 @@
 <script>
 import wepy from 'wepy'
 export default class Leadtable extends wepy.component {
-  config = {
-    navigationBarTitleText: '领读'
+  props = {
+    open: {}
   }
-  data = {
-    imglike: '../images/thumbsup.png',
-    color: '#bfbfbf'
-  }
+
   methods = {
     like(e) {
-      let self = this
-      console.log(e)
-      self.color = '#e09664'
-      self.imglike = '../images/afterlike.png'
+      this.$emit('childFn', 100)
+      // console.log(e)
+      // self.color[e.currentTarget.dataset.comIndex] = 'black'
     }
   }
 
   onLoad() {
+    let self = this
+    console.log(self.open)
   }
 }
 </script>

@@ -1,33 +1,33 @@
 
-    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="item" wx:key="index">
-        
+    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="getinfo" wx:key="index">
+      
 <view class="global">
   <view class="card contentcolumn" style="margin-top: 1px;">
 
       <view class="row authorview margin">
-        <image class="authorAvator" src="{{item.avatarUrl}}"/>
-        <text style="font-size:15px;">{{item.authorName}}</text>
+        <image class="authorAvator" src="{{getinfo.avatarUrl}}"/>
+        <text style="font-size:15px;">{{getinfo.authorName}}</text>
       </view>
 
       <view class="columncenter margin">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.icon}}"/>
+        <image class="imgsize" style="border-radius: 0.3rem;" src="{{getinfo.icon}}"/>
       </view>
 
       <view class="margin">
-        <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text">{{$leadtable$title}}</text>
+        <text class="label" style="color: white;">{{getinfo.label}}</text>
+        <text class="text">{{getinfo.title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{getinfo.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
         <view class="row" style="color: #bfbfbf;">
-          <view class="bottomfont">{{item.tapnumber}}点击</view>
-          <view class="bottomfont">·{{item.relevant}}</view>
+          <view class="bottomfont">{{getinfo.tapnumber}}点击</view>
+          <view class="bottomfont">{{getinfo.relevant}}</view>
         </view>
         <view class="row flexend bottomfont" bindtap="$leadtable$like" data-com-index="{{index}}">
-          <view class="bottomfont" style="color:{{$leadtable$color}}">{{item.like}}</view>
-          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{$leadtable$color}};" src="{{$leadtable$imglike}}"/>
+          <view class="bottomfont" style="color:{{getinfo.color[$leadtable$index]}}">{{getinfo.like}}</view>
+          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{getinfo.color[$leadtable$index]}};" src="{{getinfo.imglike[$leadtable$index]}}"/>
         </view>
       </view>
 

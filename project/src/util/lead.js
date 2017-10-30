@@ -8,7 +8,9 @@ module.exports = [
     text: '导语：在与大自然和谐相处的时候，人类究竟能在其中找到多少属于世界的写照，无论是飞禽走兽还是...',
     tapnumber: '21112',
     relevant: '2',
-    like: '198'
+    like: '198',
+    color: '#bfbfbf',
+    imglike: '../images/thumbsup.png'
   }, {
     avatarUrl: '../images/WechatIMG28.jpeg',
     authorName: '2美国黄石国家地质公园',
@@ -16,38 +18,58 @@ module.exports = [
     label: '导游',
     title: '美国黄石公园里的美景会有多少,让我们来一探究竟',
     text: '导语：在与大自然和谐相处的时候，人类究竟能在其中找到多少属于世界的写照，无论是飞禽走兽还是...',
-    tapnumber: '211122',
+    tapnumber: '21112',
     relevant: '2',
-    like: '198'
+    like: '198',
+    color: '#bfbfbf',
+    imglike: '../images/thumbsup.png'
   }, {
     avatarUrl: '../images/WechatIMG28.jpeg',
-    authorName: '3黄石国家地质公园',
+    authorName: '1美国黄石国家地质公园',
     icon: '../images/WechatIMG28.jpeg',
     label: '导游',
     title: '美国黄石公园里的美景会有多少,让我们来一探究竟',
     text: '导语：在与大自然和谐相处的时候，人类究竟能在其中找到多少属于世界的写照，无论是飞禽走兽还是...',
-    tapnumber: '332',
-    relevant: '72',
-    like: '198'
+    tapnumber: '21112',
+    relevant: '2',
+    like: '198',
+    color: '#bfbfbf',
+    imglike: '../images/thumbsup.png'
   }, {
     avatarUrl: '../images/WechatIMG28.jpeg',
-    authorName: '美国黄石国家地质公园',
+    authorName: '1美国黄石国家地质公园',
     icon: '../images/WechatIMG28.jpeg',
     label: '导游',
     title: '美国黄石公园里的美景会有多少,让我们来一探究竟',
     text: '导语：在与大自然和谐相处的时候，人类究竟能在其中找到多少属于世界的写照，无论是飞禽走兽还是...',
-    tapnumber: '225665',
-    relevant: '12',
-    like: '1968'
+    tapnumber: '21112',
+    relevant: '2',
+    like: '198',
+    color: '#bfbfbf',
+    imglike: '../images/thumbsup.png'
   }, {
     avatarUrl: '../images/WechatIMG28.jpeg',
-    authorName: '美国黄石国家地质公园',
+    authorName: '1美国黄石国家地质公园',
     icon: '../images/WechatIMG28.jpeg',
     label: '导游',
     title: '美国黄石公园里的美景会有多少,让我们来一探究竟',
     text: '导语：在与大自然和谐相处的时候，人类究竟能在其中找到多少属于世界的写照，无论是飞禽走兽还是...',
-    tapnumber: '2222',
-    relevant: '25',
-    like: '64'
+    tapnumber: '21112',
+    relevant: '2',
+    like: '198',
+    color: '#bfbfbf',
+    imglike: '../images/thumbsup.png'
+  }, {
+    avatarUrl: '../images/WechatIMG28.jpeg',
+    authorName: '1美国黄石国家地质公园',
+    icon: '../images/WechatIMG28.jpeg',
+    label: '导游',
+    title: '美国黄石公园里的美景会有多少,让我们来一探究竟',
+    text: '导语：在与大自然和谐相处的时候，人类究竟能在其中找到多少属于世界的写照，无论是飞禽走兽还是...',
+    tapnumber: '21112',
+    relevant: '2',
+    like: '198',
+    color: '#bfbfbf',
+    imglike: '../images/thumbsup.png'
   }
 ]

@@ -153,6 +153,7 @@ export default class Index extends wepy.page {
   onLoad() {
     let self = this
     self.lead = content
+    // for(push)
   }
   onPullDownRefresh() {
     setTimeout(function() {
