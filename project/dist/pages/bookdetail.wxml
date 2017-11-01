@@ -1,0 +1,10 @@
+
+  <view class="global">
+    <view style="display: flex; flex-direction: column; justify-content: center; align-items: center; ">
+      <image class="margin" src="{{bookimg}}" style="height:8rem; width: 6rem; box-shadow: 0 3px 1px #cdcdcd"/>
+      <text class="margin" style="font-size: ">{{bookname}}</text>
+      <text class="margin" style="font-size: .8rem; color: blue;">{{author}}</text>
+      <view style="font-size: .7rem; color: #e6e6e6; margin: 3% 0;">{{readernum}}万人在读 ></view>
+      <view class="line" style="margin: 2.5%;"/>
+    </view>
+  </view>

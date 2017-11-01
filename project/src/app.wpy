@@ -25,7 +25,8 @@ export default class extends wepy.app {
       'pages/search',
       'pages/readtime',
       'pages/mymessage',
-      'pages/review'
+      'pages/review',
+      'pages/bookdetail'
     ],
     window: {
       backgroundTextStyle: 'dack',

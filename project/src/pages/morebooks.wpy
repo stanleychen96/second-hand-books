@@ -6,11 +6,17 @@
 }
 .global {
   background-size: 100% 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
+.line {
+  height: 1px; 
+  width: 100%;
+  background-color:#e6e6e6;
+}
+
 .row {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
 }
@@ -28,18 +34,19 @@
   word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: gray;
 }
 </style>
 
 <template>
-  <view class="global">
-    <view class="display" style="justify-content: space-between; margin: 0 5%;">
-      <view class="row" wx:for="{{bookcover}}" wx:key="index">
+  <view class="line">
+    <view class="global"></view>
+    <view class="display" style="justify-content: space-between; margin: 0 2.5%; padding: 0 5%;">
+      <view class="row" wx:for="{{bookcover}}" wx:key="index" @tap="bookdetail">
         <view class="column">
-          <image src="{{item.bookcover}}" mode="widthFix" style=" width: 24vw; margin-top: 15%;"></image>
-          <text class="text" style="width: 24vw; margin-top: 10%;">{{item.desc}}</text>
+          <image src="{{item.bookcover}}" style=" width: 24vw; height: 33vw; margin-top: 18.5%; box-shadow: 1px 1px 1px gray;"></image>
+          <text class="text" style="width: 24vw; margin: 15% 0 5% 0;">{{item.desc}}</text>
         </view>      
       </view>
     </view>
@@ -58,6 +65,11 @@ export default class Index extends wepy.page {
     bookcover: []
   }
   methods = {
+    bookdetail() {
+      wepy.navigateTo({
+        url: './bookdetail'
+      })
+    }
   }
   onLoad(option) {
     let self = this

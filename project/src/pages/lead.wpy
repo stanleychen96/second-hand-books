@@ -132,9 +132,9 @@ export default class Index extends wepy.page {
   }
   data = {
 
-    imglike: ['../images/thumbsup.png'],
-    lead: [],
-    color: ['#bfbfbf']
+    imglike: [],
+    lead: content,
+    color: []
   }
   methods = {
     like(e) {
@@ -152,8 +152,12 @@ export default class Index extends wepy.page {
 
   onLoad() {
     let self = this
-    self.lead = content
-    // for(push)
+    console.log(content.length)
+    console.log(self.imglike)
+    for (var index = 0; index < content.length; index++) {
+      self.imglike[index] = '../images/thumbsup.png'
+      self.color[index] = '#bfbfbf'
+    }
   }
   onPullDownRefresh() {
     setTimeout(function() {

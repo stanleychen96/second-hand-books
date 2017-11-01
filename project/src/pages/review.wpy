@@ -1,10 +1,22 @@
 <style>
-
+  .global {
+    background-size: 100% 100%;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+  }
 </style>
 
 <template>
-  <view>
-    
+  <view class="global">
+    <view style="justify-content: center; margin: 5%;">
+      <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <text style="text-decoration: underline black; padding-left: 30%" @tap="mycol">收藏的</text>
+        <text style="text-decoration: underline black; padding-right: 30%" @tap="mine">我的</text>
+      </view>
+    </view>
   </view> 
 </template>
 
@@ -19,6 +31,12 @@ export default class Index extends wepy.page {
 
   }
   methods = {
+    mycol() {
+
+    },
+    mine() {
+
+    }
   }
   onLoad(option) {}
   onPullDownRefresh() {

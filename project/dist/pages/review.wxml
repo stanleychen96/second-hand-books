@@ -1,4 +1,9 @@
 
-  <view>
-    
+  <view class="global">
+    <view style="justify-content: center; margin: 5%;">
+      <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <text style="text-decoration: underline black; padding-left: 30%" bindtap="mycol">收藏的</text>
+        <text style="text-decoration: underline black; padding-right: 30%" bindtap="mine">我的</text>
+      </view>
+    </view>
   </view>

@@ -1,8 +1,8 @@
 
   <view class="globalmargin">
-    <view class="row">
+    <view style="display: flex; justify-content: flex-start; align-items: center; margin: 1px 2.5%;">
       <navigator class="input" url="./search" open-type="navigate">
-        <view style="color: gray">🔍 搜索</view>
+        <view style="color: #b6b6b6; font-size: 0.8rem; line-height: 1.5rem;">搜索</view>
       </navigator>
       <view style="display: flex; justify-content: flex-end; width: 100%;" bindtap="scancode">
         <image class="QRcode" src="{{QRcode}}"/>
@@ -10,32 +10,32 @@
     </view>
 
     <view class="row spacebetween margin">
-      <view class="size column" style="position:relative;">
+      <view class="size column" style="position:relative; margin-left: 2.5%;" bindtap="toplist">
         <view class="column" style="position: absolute;">
-          <text style="color: white; letter-space: 15px;">与动物</text>
-          <text style="color: white; font-size: .6rem;">with animal</text>
+          <text style="color: white; letter-space: 15px;">在 读 榜</text>
+          <text style="color: white; font-size: .6rem;">Top List</text>
         </view>
-        <image style="width:100%; height:100%;" src="{{left}}"/>
+        <image style="width:100%; height:100%; border-radius: 0.2rem;" src="{{left}}"/>
       </view> 
-    <view class="size column" style="position:relative;">
+      <view class="size column" style="position:relative; margin-right: 2.5%;">
         <view class="column" style="position: absolute;">
-          <text style="color: white; letter-space: 15px;">与自然</text>
-          <text style="color: white; font-size: .6rem;">with environment</text>
+          <text style="color: white; letter-space: 15px;">新 书 榜</text>
+          <text style="color: white; font-size: .6rem;">New Release</text>
         </view>
-        <image style="width:100%; height:100%;" src="{{right}}"/>
+        <image style="width:100%; height:100%; border-radius: 0.2rem;" src="{{right}}"/>
       </view>
     </view>
 
     <view class="row">
       <view class="line"/>
-      <text class="classify" style="word">分类</text>
+      <text class="classify" style="word">分 类</text>
       <view class="line"/>
     </view>
 
     <view class="display">
-      <view  wx:for="{{box}}" wx:key="index" id="{{index}}" class="row spacebetween" style="position:relative;">
-        <text style="color: white; position: absolute; top: 0; margin: 5% 0 0 10%;">{{item.title}}</text>
-        <image mode="widthFix" class="imgsize" src="{{item.icon}}"/>
+      <view  wx:for="{{box}}" wx:key="index" id="{{index}}" class="row spacebetween imgsize row" style="position:relative;">
+        <text style="color: white; position: absolute; top: 0; margin: 8% 0 0 12%; font-size: .8rem;">{{item.title}}</text>
+        <image mode="widthFix" style="border-radius: 0.3rem;" src="{{item.icon}}"/>
       </view>
     </view>
 

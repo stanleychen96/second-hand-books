@@ -6,11 +6,17 @@
 }
 .global {
   background-size: 100% 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
 }
+.line {
+  height: 1px; 
+  width: 100%;
+  background-color:#e6e6e6;
+}
+
 .row {
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
 }
@@ -28,6 +34,6 @@
   word-break: break-all;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: gray;
 }
