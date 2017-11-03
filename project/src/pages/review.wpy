@@ -1,48 +1,126 @@
 <style>
-  .global {
-    background-size: 100% 100%;
-    height: 100%;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;  
+.global {
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+.line {
+  width: 100%;
+  border-bottom: 1px solid #e6e6e6;  
   }
+.margin {
+  margin: 5%;
+}
 </style>
 
 <template>
-  <view class="global">
-    <view style="justify-content: center; margin: 5%;">
-      <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-        <text style="text-decoration: underline black; padding-left: 30%" @tap="mycol">收藏的</text>
-        <text style="text-decoration: underline black; padding-right: 30%" @tap="mine">我的</text>
-      </view>
+<view>
+  <view class="line"></view>
+  <form class="global" bindsubmit="formSubmit">
+    <view>
+      <input class="margin" placeholder="标题" name="title"/>
     </view>
-  </view> 
+    <view class="margin line"></view>
+    <view>
+      <textarea class="margin" style="font-size: 0.8rem;" placeholder="正文" name="content" />
+    </view>
+    <view>
+      <button style="margin" formType="submit">发布</button>
+    </view>
+  </form>
+</view> 
 </template>
 
 <script>
 import wepy from 'wepy'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '我的书评'
+    navigationBarTitleText: ''
   }
 
   data = {
-
+    avatarUrl: '',
+    nickName: '',
+    tempFilePaths: ''
   }
   methods = {
-    mycol() {
-
+    chooseimg() {
+      let self = this
+      wepy.chooseImage({
+        count: 1, // 默认9
+        sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+        sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+        success: function (res) {
+          self.tempFilePaths = res.tempFilePaths
+        }
+      })
     },
-    mine() {
-
+    formSubmit(e) {
+      let self = this
+      let item = e.detail.value
+      let title = item.title
+      let content = item.content
+      console.log(e.detail.value, 'item')
+      if (title.replace(/\s/g, '') === '') {
+        console.log(item.title, 'item.title')
+        wepy.showModal({
+          title: '提示',
+          content: '要添加标题的哦',
+          showCancel: false,
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      } else {
+        if (content.replace(/\s/g, '') === '') {
+          wepy.showModal({
+            title: '提示',
+            content: '要添加内容的哦',
+            showCancel: false,
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+              }
+            }
+          })
+        } else {
+          wepy.request({
+            url: 'http://127.0.0.1:7001/writereview',
+            method: 'POST',
+            data: {
+              title: e.detail.value.title,
+              content: e.detail.value.content,
+              nickname: self.nickName,
+              icon: self.avatarUrl
+            },
+            success: function(res) {
+              console.log(res, 'res')
+            }
+          })
+          wepy.navigateBack({
+            delta: 1
+          })
+        }
+      }
     }
   }
-  onLoad(option) {}
-  onPullDownRefresh() {
-    setTimeout(function() {
-      wepy.stopPullDownRefresh()
-    }, 1000)
+  onLoad() {
+    let self = this
+    wepy.getUserInfo({
+      success(res) {
+        self.nickName = res.userInfo.nickName
+        self.avatarUrl = res.userInfo.avatarUrl
+      }
+    })
   }
 }
 </script>

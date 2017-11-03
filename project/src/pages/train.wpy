@@ -31,7 +31,8 @@
       }
     }
 
-    onLoad(option) {}
+    onLoad() {
+    }
 
     onPullDownRefresh() {
       setTimeout(function() {

@@ -93,12 +93,12 @@
   <view class="card contentcolumn" style="margin-top: 1px;">
 
       <view class="row authorview margin">
-        <image class="authorAvator" src="{{open.avatarUrl}}"></image>
+        <image class="authorAvator" src="{{open.icon}}"></image>
         <text style="font-size:15px;">{{open.authorName}}</text>
       </view>
 
       <view class="columncenter margin">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{open.icon}}"></image>
+        <image class="imgsize" style="border-radius: 0.3rem;" src="{{open.img}}"></image>
       </view>
 
       <view class="margin">

@@ -34,13 +34,19 @@ var Index = function (_wepy$page) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Index.__proto__ || Object.getPrototypeOf(Index)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      navigationBarTitleText: '书桌'
+      navigationBarTitleText: '书评正文'
     }, _this.data = {
-      findbooks: '../images/findbooks.png'
+      item: '',
+      title: 'title很长很长很长很长很长很长很长很长很长很长很长很长',
+      avatarUrl: '',
+      authorName: 'name',
+      img: '',
+      text: 'ssssssssssssssssssssssssssssss',
+      signature: '生活哲学探寻者'
     }, _this.methods = {
-      findmore: function findmore() {
-        _wepy2.default.navigateTo({
-          url: './morebooks'
+      attent: function attent(e) {
+        _wepy2.default.request({
+          url: ''
         });
       }
     }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -62,6 +68,6 @@ var Index = function (_wepy$page) {
 }(_wepy2.default.page);
 
 
-Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/desk'));
+Page(require('./../npm/wepy/lib/wepy.js').default.$createPage(Index , 'pages/leadcontent'));
 
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRlc2suanMiXSwibmFtZXMiOlsiSW5kZXgiLCJjb25maWciLCJuYXZpZ2F0aW9uQmFyVGl0bGVUZXh0IiwiZGF0YSIsImZpbmRib29rcyIsIm1ldGhvZHMiLCJmaW5kbW9yZSIsIm5hdmlnYXRlVG8iLCJ1cmwiLCJzZXRUaW1lb3V0Iiwic3RvcFB1bGxEb3duUmVmcmVzaCIsInBhZ2UiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOzs7Ozs7Ozs7Ozs7SUFDcUJBLEs7Ozs7Ozs7Ozs7Ozs7O29MQUNuQkMsTSxHQUFTO0FBQ1BDLDhCQUF3QjtBQURqQixLLFFBSVRDLEksR0FBTztBQUNMQyxpQkFBVztBQUROLEssUUFJUEMsTyxHQUFVO0FBQ1JDLGNBRFEsc0JBQ0c7QUFDVCx1QkFBS0MsVUFBTCxDQUFnQjtBQUNkQyxlQUFLO0FBRFMsU0FBaEI7QUFHRDtBQUxPLEs7Ozs7OzZCQVFELENBQUU7Ozt3Q0FDUztBQUNsQkMsaUJBQVcsWUFBVztBQUNwQix1QkFBS0MsbUJBQUw7QUFDRCxPQUZELEVBRUcsSUFGSDtBQUdEOzs7O0VBdEJnQyxlQUFLQyxJOztrQkFBbkJYLEsiLCJmaWxlIjoiZGVzay5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0IHdlcHkgZnJvbSAnd2VweSdcbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEluZGV4IGV4dGVuZHMgd2VweS5wYWdlIHtcbiAgY29uZmlnID0ge1xuICAgIG5hdmlnYXRpb25CYXJUaXRsZVRleHQ6ICfkuabmoYwnXG4gIH1cblxuICBkYXRhID0ge1xuICAgIGZpbmRib29rczogJy4uL2ltYWdlcy9maW5kYm9va3MucG5nJ1xuICB9XG5cbiAgbWV0aG9kcyA9IHtcbiAgICBmaW5kbW9yZSgpIHtcbiAgICAgIHdlcHkubmF2aWdhdGVUbyh7XG4gICAgICAgIHVybDogJy4vbW9yZWJvb2tzJ1xuICAgICAgfSlcbiAgICB9XG4gIH1cblxuICBvbkxvYWQoKSB7fVxuICBvblB1bGxEb3duUmVmcmVzaCgpIHtcbiAgICBzZXRUaW1lb3V0KGZ1bmN0aW9uKCkge1xuICAgICAgd2VweS5zdG9wUHVsbERvd25SZWZyZXNoKClcbiAgICB9LCAxMDAwKVxuICB9XG59XG4iXX0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImxlYWRjb250ZW50LmpzIl0sIm5hbWVzIjpbIkluZGV4IiwiY29uZmlnIiwibmF2aWdhdGlvbkJhclRpdGxlVGV4dCIsImRhdGEiLCJpdGVtIiwidGl0bGUiLCJhdmF0YXJVcmwiLCJhdXRob3JOYW1lIiwiaW1nIiwidGV4dCIsInNpZ25hdHVyZSIsIm1ldGhvZHMiLCJhdHRlbnQiLCJlIiwicmVxdWVzdCIsInVybCIsInNldFRpbWVvdXQiLCJzdG9wUHVsbERvd25SZWZyZXNoIiwicGFnZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7O0FBQ0E7Ozs7Ozs7Ozs7OztJQUNxQkEsSzs7Ozs7Ozs7Ozs7Ozs7b0xBQ25CQyxNLEdBQVM7QUFDUEMsOEJBQXdCO0FBRGpCLEssUUFHVEMsSSxHQUFPO0FBQ0xDLFlBQU0sRUFERDtBQUVMQyxhQUFPLCtCQUZGO0FBR0xDLGlCQUFXLEVBSE47QUFJTEMsa0JBQVksTUFKUDtBQUtMQyxXQUFLLEVBTEE7QUFNTEMsWUFBTSxnQ0FORDtBQU9MQyxpQkFBVztBQVBOLEssUUFTUEMsTyxHQUFVO0FBQ1JDLFlBRFEsa0JBQ0RDLENBREMsRUFDRTtBQUNSLHVCQUFLQyxPQUFMLENBQWE7QUFDWEMsZUFBSztBQURNLFNBQWI7QUFJRDtBQU5PLEs7Ozs7OzZCQVNELENBRVI7Ozt3Q0FDbUI7QUFDbEJDLGlCQUFXLFlBQVc7QUFDcEIsdUJBQUtDLG1CQUFMO0FBQ0QsT0FGRCxFQUVHLElBRkg7QUFHRDs7OztFQTdCZ0MsZUFBS0MsSTs7a0JBQW5CbEIsSyIsImZpbGUiOiJsZWFkY29udGVudC5qcyIsInNvdXJjZXNDb250ZW50IjpbIlxuaW1wb3J0IHdlcHkgZnJvbSAnd2VweSdcbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEluZGV4IGV4dGVuZHMgd2VweS5wYWdlIHtcbiAgY29uZmlnID0ge1xuICAgIG5hdmlnYXRpb25CYXJUaXRsZVRleHQ6ICfkuabor4TmraPmlocnXG4gIH1cbiAgZGF0YSA9IHtcbiAgICBpdGVtOiAnJyxcbiAgICB0aXRsZTogJ3RpdGxl5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/5b6I6ZW/JyxcbiAgICBhdmF0YXJVcmw6ICcnLFxuICAgIGF1dGhvck5hbWU6ICduYW1lJyxcbiAgICBpbWc6ICcnLFxuICAgIHRleHQ6ICdzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3MnLFxuICAgIHNpZ25hdHVyZTogJ+eUn+a0u+WTsuWtpuaOouWvu+iAhSdcbiAgfVxuICBtZXRob2RzID0ge1xuICAgIGF0dGVudChlKSB7XG4gICAgICB3ZXB5LnJlcXVlc3Qoe1xuICAgICAgICB1cmw6ICcnXG4gICAgICB9KVxuXG4gICAgfVxuICB9XG5cbiAgb25Mb2FkKCkge1xuXG4gIH1cbiAgb25QdWxsRG93blJlZnJlc2goKSB7XG4gICAgc2V0VGltZW91dChmdW5jdGlvbigpIHtcbiAgICAgIHdlcHkuc3RvcFB1bGxEb3duUmVmcmVzaCgpXG4gICAgfSwgMTAwMClcbiAgfVxufVxuIl19

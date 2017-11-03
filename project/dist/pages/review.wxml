@@ -1,9 +1,16 @@
 
-  <view class="global">
-    <view style="justify-content: center; margin: 5%;">
-      <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-        <text style="text-decoration: underline black; padding-left: 30%" bindtap="mycol">收藏的</text>
-        <text style="text-decoration: underline black; padding-right: 30%" bindtap="mine">我的</text>
-      </view>
+<view>
+  <view class="line"/>
+  <form class="global" bindsubmit="formSubmit">
+    <view>
+      <input class="margin" placeholder="标题" name="title"/>
     </view>
-  </view>
+    <view class="margin line"/>
+    <view>
+      <textarea class="margin" style="font-size: 0.8rem;" placeholder="正文" name="content"/>
+    </view>
+    <view>
+      <button style="margin" formType="submit">发布</button>
+    </view>
+  </form>
+</view>

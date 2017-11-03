@@ -1,16 +1,28 @@
 
-    <block wx:for="{{list}}" wx:for-index="index" wx:for-item="getinfo" wx:key="index">
+<view>
+  <view class="global"  wx:if="{{title.length}}">
+    <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;">
+      <view bindtap="writenew">写</view>
+      <view>
+        <image style="height: 8rem; width: 6rem; margin: 25% 0 10% 0" scr="{{noReview}}"/>
+        <text style="font-size: .8rem; color: #e6e6e6;">还没有发表过书评唷</text>
+      </view>
+    </view> 
+  </view>
+
+  <view class="global"  wx:else>
+    <block wx:for="{{review}}" wx:for-index="index" wx:for-item="getinfo" wx:key="index">
       
 <view class="global">
   <view class="card contentcolumn" style="margin-top: 1px;">
 
       <view class="row authorview margin">
-        <image class="authorAvator" src="{{getinfo.icon}}"/>
+        <image class="authorAvator" src="{{getinfo.avatarUrl}}"/>
         <text style="font-size:15px;">{{getinfo.authorName}}</text>
       </view>
 
       <view class="columncenter margin">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{getinfo.img}}"/>
+        <image class="imgsize" style="border-radius: 0.3rem;" src="{{getinfo.icon}}"/>
       </view>
 
       <view class="margin">
@@ -35,3 +47,6 @@
 </view>
 
     </block>
+    <view bindtap="writenew">写</view>
+  </view>
+</view>

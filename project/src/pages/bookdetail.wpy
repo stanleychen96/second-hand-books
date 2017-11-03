@@ -23,6 +23,9 @@
       <text class="margin" style="font-size: ">{{bookname}}</text>
       <text class="margin" style="font-size: .8rem; color: blue;">{{author}}</text>
       <view style="font-size: .7rem; color: #e6e6e6; margin: 3% 0;">{{readernum}}万人在读 ></view>
+      <view>
+        <text style="color"></text>
+        </view>
       <view class="line" style="margin: 2.5%;"></view>
     </view>
   </view> 

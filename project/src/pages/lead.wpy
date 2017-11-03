@@ -92,24 +92,24 @@
 <view class="global">
   <view class="card contentcolumn" style="margin-top: 1px;" wx:for="{{lead}}" wx:key="index" id="{{index}}" data-index="{{index}}">
 
-      <view class="row authorview margin">
+      <view class="row authorview margin" @tap="author">
         <image class="authorAvator" src="{{item.avatarUrl}}"></image>
         <text style="font-size:15px;">{{item.authorName}}</text>
       </view>
 
-      <view class="columncenter margin">
+      <view class="columncenter margin" @tap="leadcontent">
         <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.icon}}"></image>
       </view>
 
       <view class="margin">
         <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text">{{item.title}}</text>
+        <text class="text" @tap="leadcontent">{{item.title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a; ">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" @tap="leadcontent">{{item.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
-        <view class="row" style="color: #bfbfbf;">
+        <view class="row" style="color: #bfbfbf;" @tap="leadcontent">
           <view class="bottomfont">{{item.tapnumber}}点击</view>
           <view class="bottomfont">·{{item.relevant}}</view>
         </view>
@@ -147,7 +147,19 @@ export default class Index extends wepy.page {
       // })
       self.color[item] = '#e09664'
       self.imglike[item] = '../images/afterlike.png'
+    },
+    leadcontent(e) {
+      console.log(e.currentTarget.dataset.index)
+      let serial = e.currentTarget.dataset.index
+      wepy.navigateTo({
+        url: `./leadcontent?index=${serial}`
+      })
     }
+    // author() {
+    //   wepy.navigateTo({
+    //     url: './'
+    //   })
+    // }
   }
 
   onLoad() {

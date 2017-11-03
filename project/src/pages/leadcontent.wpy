@@ -1,0 +1,75 @@
+<style lang="less">
+.global {
+  // display: flex;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  // position: fixed;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.tap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 15%;
+}
+</style>
+
+<template>
+<view class="global">
+  <view style="padding: 5%;">
+    <text style="flex-wrap: wrap;">{{title}}</text>
+    <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;margin: 2.5% 0;">
+      <view style="display: flex; flex-direction: row; width: 50%;">
+        <image scr="{{avatarUrl}}" style="height: 1.5rem; width: 1.5rem; margin-right:5%;"></image>
+        <view style="display: flex; flex-direction: column; ">
+          <text style="font-size: .7rem;">{{authorName}}</text>
+          <text style="font-size: .65rem;color: #e6e6e6;">{{signature}}</text>
+        </view>
+      </view>
+      <image style="width: 10%; height: 1.2rem;" scr="{{attention}}"></image>
+    </view>
+    <image scr="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" @tap="attent"></image>
+    <text style="font-size: .8rem;">{{text}}</text>
+  </view>
+</view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '书评正文'
+  }
+  data = {
+    item: '',
+    title: 'title很长很长很长很长很长很长很长很长很长很长很长很长',
+    avatarUrl: '',
+    authorName: 'name',
+    img: '',
+    text: 'ssssssssssssssssssssssssssssss',
+    signature: '生活哲学探寻者'
+  }
+  methods = {
+    attent(e) {
+      wepy.request({
+        url: ''
+      })
+
+    }
+  }
+
+  onLoad() {
+
+  }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+}
+</script>

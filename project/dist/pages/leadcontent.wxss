@@ -1,0 +1,1 @@
+.global{background-size:100% 100%;height:100%;width:100%;background-color:white;flex-direction:column;justify-content:center;align-items:center}.tap{display:flex;flex-direction:column;justify-content:center;align-content:center;width:15%}
