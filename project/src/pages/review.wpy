@@ -27,6 +27,7 @@
     <view>
       <textarea class="margin" style="font-size: 0.8rem;" placeholder="正文" name="content" />
     </view>
+    <view></view>
     <view>
       <button style="margin" formType="submit">发布</button>
     </view>
@@ -100,7 +101,8 @@ export default class Index extends wepy.page {
               title: e.detail.value.title,
               content: e.detail.value.content,
               nickname: self.nickName,
-              icon: self.avatarUrl
+              icon: self.avatarUrl,
+              img: self.tempFilePaths
             },
             success: function(res) {
               console.log(res, 'res')

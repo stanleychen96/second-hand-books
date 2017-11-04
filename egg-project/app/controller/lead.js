@@ -8,15 +8,18 @@ module.exports = app => {
     // * delete() {
     //   this.ctx.body = yield this.service.bookreview.delete(this.ctx.request.body);
     // }
-    * get() {
-      this.ctx.body = yield this.service.bookreview.get(this.ctx.request.body);
-    }
+    // * get() {
+    //   this.ctx.body = yield this.service.bookreview.get(this.ctx.request.body);
+    // }
     // * update() {
     //   this.ctx.body = yield this.service.bookreview.update(this.ctx.request.body);
     // }
-    // * select() {
-    //   this.ctx.body = yield this.service.bookreview.select(this.ctx.request.body);
-    // }
+    * select() {
+      this.ctx.body = yield this.service.bookreview.selectid(this.ctx.request.body);
+    }
+    * leadselect() {
+      this.ctx.body = yield this.service.bookreview.leadselect(this.ctx.request.body);
+    }
 
   }
   return LeadController;

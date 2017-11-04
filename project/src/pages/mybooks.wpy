@@ -1,0 +1,117 @@
+<style>
+.display {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.global {
+  background-size: 100% 100%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+.line {
+  height: 1px; 
+  width: 100%;
+  background-color:#e6e6e6;
+}
+
+.row {
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  display: -webkit-box;
+  overflow: hidden;
+  flex-wrap: wrap;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.8rem;
+  color: gray;
+}
+</style>
+
+<template>
+  <view class="line">
+    
+    <view class="global" wx:if="{{bookimg == 0}}">
+      <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;" >
+        <view style="display: flex; flex-direction: column;">
+          <image style="height: 8rem; width: 6rem; margin: 25% 0 10% 0; background-color: #969696; border-radius: .3rem;" src="{{noReview}}" @tap="add"></image>
+          <text style="font-size: .8rem; color: #e6e6e6;">还没有添加收藏唷</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="global" wx:else>
+      <view class="display" style="justify-content: space-between; margin: 0 2.5%; padding: 0 5%;">
+        <view class="row" wx:for="{{bookcover}}" wx:key="index" @tap="bookdetail">
+          <view class="column">
+            <image src="{{item.bookimg}}" style=" width: 24vw; height: 33vw; margin-top: 18.5%; box-shadow: 1px 1px 1px gray;"></image>
+            <text class="text" style="width: 24vw; margin: 15% 0 5% 0;">{{item.titile}}</text>
+          </view>      
+        </view>
+      </view> 
+    </view>
+
+  </view>
+</template>
+
+<script>
+import wepy from 'wepy'
+export default class Index extends wepy.page {
+  config = {
+    navigationBarTitleText: '我的收藏'
+  }
+
+  data = {
+    noReview: '../images/加.png',
+    bookcover: [],
+    bookimg: ''
+  }
+  methods = {
+    bookdetail() {
+      wepy.navigateTo({
+        url: './bookdetail'
+      })
+    },
+    add() {
+      wepy.navigateTo({
+        url: './'
+      })
+    }
+  }
+  async onLoad (data) {
+    let self = this
+    await wepy.getUserInfo({
+      success: function(res) {
+        self.icon = res.userInfo.nickname
+        self.nickname = res.userInfo.nickName
+      }
+    })
+    wepy.request({
+      url: 'http://127.0.0.1:7001/selectbook',
+      mothed: 'POST',
+      data: {
+        nickname: self.nickname
+      },
+      success: function(res) {
+        console.log(res, 'res')
+      }
+    })
+  }
+  onPullDownRefresh() {
+    setTimeout(function() {
+      wepy.stopPullDownRefresh()
+    }, 1000)
+  }
+}
+</script>

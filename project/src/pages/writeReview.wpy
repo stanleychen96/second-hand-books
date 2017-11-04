@@ -4,14 +4,26 @@
   background-size: 100% 100%;
   height: 100%;
   width: 100%;
-  background-color: #DEDEDE;
+  /* background-color: #DEDEDE; */
+  /* position: fixed; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.global2 {
+  display: flex;
+  background-size: 100% 100%;
+  height: 100%;
+  width: 100%;
+  /* background-color: #DEDEDE; */
   /* position: fixed; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .line {
-  border-bottom: 1px solid 
+  border-bottom: 1px solid #e6e6e6;
+  width: 100%;
 }
 .row {
 display: flex;
@@ -33,42 +45,42 @@ justify-content: center;
 .underline {
   height: 1px;
   width: 100%;
-  margin-left: 16%;
+  margin-left: 5%;
   background-color: #cdcdcd;
 }
 </style>
 
 <template>
-<view>
-  <view class="global" wx:if="{{title.length}}">
-    <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;" >
-      <view @tap="writenew">写</view>
-      <view>
+<view class="global">
+  <view class="line"></view>
+
+    <view wx:if="{{review == ''}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;" >
+      <view style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
         <image style="height: 8rem; width: 6rem; margin: 25% 0 10% 0" scr="{{noReview}}"></image>
-        <text style="font-size: .8rem; color: #e6e6e6;">还没有发表过书评唷</text>
+        <text style="font-size: .8rem; color: #e6e6e6;">还没发表过书评唷</text>
       </view>
     </view> 
-  </view>
 
-  <view class="global" wx:else>
-    <repeat for="{{review}}" key="index" index="index" item="getinfo">
-      <leadtable :open="getinfo" @childFn.user="parentFn"></leadtable>
-    </repeat>
+    <view style="width: 100%" wx:else>
+      <view wx:for="{{review}}" wx:key="index" style="display: flex; flex-direction: column; justify-content: flex-start; margin: 5%;">
+        <view style="display: flex; flex-direction: row; justify-content: space-between;">
+          <text style="">{{item.title}}</text>
+          <view style="font-size: .7rem; color: #a6a6a6;">{{create_at}}</view>
+        </view>
+        <text style="font-size: .8rem; color: #d6d6d6;">{{item.content}}</text>
+        <view class="underline"></view>
+      </view>
+    </view>    
     <view @tap="writenew">写</view>
-  </view>
 </view>
 </template>
 
 <script>
 import wepy from 'wepy'
-import Leadtable from '../components/leadtable'
 export default class Index extends wepy.page {
   config = {
-    navigationBarTitleText: '我的书评'
-  }
-
-  components = {
-    leadtable: Leadtable
+    navigationBarTitleText: '我的书评',
+    enablePullDownRefresh: true
   }
 
   data = {
@@ -76,7 +88,8 @@ export default class Index extends wepy.page {
     review: '',
     title: '',
     icon: '',
-    nickname: ''
+    nickname: '',
+    create_at: '8月6日'
   }
   methods = {
     writenew() {

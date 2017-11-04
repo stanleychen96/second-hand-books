@@ -1,0 +1,24 @@
+
+  <view class="line">
+    
+    <view class="global"  wx:if="{{bookimg == 0}}">
+      <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;">
+        <view style="display: flex; flex-direction: column;">
+          <image style="height: 8rem; width: 6rem; margin: 25% 0 10% 0; background-color: #969696; border-radius: .3rem;" src="{{noReview}}" bindtap="add"/>
+          <text style="font-size: .8rem; color: #e6e6e6;">还没有添加收藏唷</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="global"  wx:else>
+      <view class="display" style="justify-content: space-between; margin: 0 2.5%; padding: 0 5%;">
+        <view class="row" wx:for="{{bookcover}}" wx:key="index" bindtap="bookdetail">
+          <view class="column">
+            <image src="{{item.bookimg}}" style=" width: 24vw; height: 33vw; margin-top: 18.5%; box-shadow: 1px 1px 1px gray;"/>
+            <text class="text" style="width: 24vw; margin: 15% 0 5% 0;">{{item.titile}}</text>
+          </view>      
+        </view>
+      </view> 
+    </view>
+
+  </view>

@@ -64,6 +64,7 @@ module.exports = app => {
         level.string('bookimg').notNullable().defaultTo('');
         level.text('booktitle').notNullable().defaultTo('0');
         level.string('author').notNullable().defaultTo('0');
+        level.string('nickname').notNullable().defaultTo('');
         // level.string('classify').notNullable().defaultTo('0');
         // level.string('source').notNullable().defaultTo('0');
         // level.dateTime('dateTime').notNullable().defaultTo('2018-09-09 09:09:09.001001');

@@ -23,7 +23,7 @@ module.exports = app => {
       return res;
     }
 
-    * select(res) {
+    * selectnickname(res) {
       let text;
       try {
         text = yield app.mysql.select('bookreview', {
@@ -36,6 +36,26 @@ module.exports = app => {
       return text;
     }
 
+    * selectid() {
+      let text;
+      try {
+        text = yield app.mysql.select('bookreview');
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+      return text;
+    }
+    * leadselect() {
+      let text;
+      try {
+        text = yield app.mysql.select('bookreview');
+      } catch (e) {
+        this.ctx.logger.error(e);
+        return false;
+      }
+      return text;
+    }
     // * delete(a) {
     //   try {
     //     yield app.mysql.delete('bookreview', a);

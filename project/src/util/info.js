@@ -7,7 +7,10 @@ module.exports = [
   {
     icon: '../images/message.png',
     desc: '我的书单·书评',
-    sth: '',
-    tap: ''
+    sth: ''
+  },
+  {
+    icon: '../images/book.png',
+    desc: '我的收藏'
   }
 ]

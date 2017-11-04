@@ -22,18 +22,18 @@
 <template>
 <view class="global">
   <view style="padding: 5%;">
-    <text style="flex-wrap: wrap;">{{title}}</text>
+    <text style="flex-wrap: wrap; color: black;">{{title}}</text>
     <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;margin: 2.5% 0;">
       <view style="display: flex; flex-direction: row; width: 50%;">
-        <image scr="{{avatarUrl}}" style="height: 1.5rem; width: 1.5rem; margin-right:5%;"></image>
+        <image src="{{avatarUrl}}" style="height: 1.5rem; width: 1.5rem; margin-right:5%;"></image>
         <view style="display: flex; flex-direction: column; ">
-          <text style="font-size: .7rem;">{{authorName}}</text>
+          <text style="font-size: .7rem;">{{nickname}}</text>
           <text style="font-size: .65rem;color: #e6e6e6;">{{signature}}</text>
         </view>
       </view>
-      <image style="width: 10%; height: 1.2rem;" scr="{{attention}}"></image>
+      <image style="width: 10%; height: 1.2rem;" src="{{attention}}"></image>
     </view>
-    <image scr="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" @tap="attent"></image>
+    <image src="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" @tap="attent"></image>
     <text style="font-size: .8rem;">{{text}}</text>
   </view>
 </view>
@@ -46,25 +46,45 @@ export default class Index extends wepy.page {
     navigationBarTitleText: '书评正文'
   }
   data = {
-    item: '',
-    title: 'title很长很长很长很长很长很长很长很长很长很长很长很长',
+    item: 'q',
+    title: '',
     avatarUrl: '',
-    authorName: 'name',
+    nickname: '',
     img: '',
-    text: 'ssssssssssssssssssssssssssssss',
+    text: '',
+    index: '',
     signature: '生活哲学探寻者'
   }
   methods = {
-    attent(e) {
-      wepy.request({
-        url: ''
-      })
-
-    }
+    // attent(e) {
+    //   wepy.request({
+    //     url: ''
+    //   })
+    // }
   }
 
-  onLoad() {
-
+  onLoad(option) {
+    let self = this
+    self.index = option.index
+    console.log(option.index, 'option')
+    wepy.request({
+      url: 'http://127.0.0.1:7001/lead',
+      method: 'POST',
+      success(res) {
+        console.log(res, 'lead res')
+        console.log(res.data[self.index].title)
+        self.title = res.data[self.index].title
+        self.nickname = res.data[self.index].nickname
+        self.avatarUrl = res.data[self.index].icon
+        self.text = res.data[self.index].content
+        self.setData({
+          title: res.data[self.index].title,
+          nickname: res.data[self.index].nickname,
+          avatarUrl: res.data[self.index].icon,
+          text: res.data[self.index].content
+        })
+      }
+    })
   }
   onPullDownRefresh() {
     setTimeout(function() {

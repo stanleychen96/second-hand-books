@@ -15,7 +15,7 @@ module.exports = app => {
     //   this.ctx.body = yield this.service.bookreview.update(this.ctx.request.body);
     // }
     * select() {
-      this.ctx.body = yield this.service.bookreview.select(this.ctx.request.body);
+      this.ctx.body = yield this.service.bookreview.selectnickname(this.ctx.request.body);
     }
 
   }

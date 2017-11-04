@@ -93,23 +93,23 @@
   <view class="card contentcolumn" style="margin-top: 1px;" wx:for="{{lead}}" wx:key="index" id="{{index}}" data-index="{{index}}">
 
       <view class="row authorview margin" @tap="author">
-        <image class="authorAvator" src="{{item.avatarUrl}}"></image>
+        <image class="authorAvator" src="{{item.icon}}"></image>
         <text style="font-size:15px;">{{item.authorName}}</text>
       </view>
 
-      <view class="columncenter margin" @tap="leadcontent">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.icon}}"></image>
+      <view class="columncenter margin" @tap="leadcontent" id="{{index}}" data-index="{{index}}">
+        <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.img}}"></image>
       </view>
 
       <view class="margin">
         <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text" @tap="leadcontent">{{item.title}}</text>
+        <text class="text" @tap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" @tap="leadcontent">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" @tap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
-        <view class="row" style="color: #bfbfbf;" @tap="leadcontent">
+        <view class="row" style="color: #bfbfbf;" @tap="leadcontent" id="{{index}}" data-index="{{index}}">
           <view class="bottomfont">{{item.tapnumber}}点击</view>
           <view class="bottomfont">·{{item.relevant}}</view>
         </view>
@@ -125,7 +125,7 @@
 
 <script>
 import wepy from 'wepy'
-import content from '../util/lead'
+// import content from '../util/lead'
 export default class Index extends wepy.page {
   config = {
     navigationBarTitleText: '领读 '
@@ -133,7 +133,7 @@ export default class Index extends wepy.page {
   data = {
 
     imglike: [],
-    lead: content,
+    lead: '',
     color: []
   }
   methods = {
@@ -149,24 +149,26 @@ export default class Index extends wepy.page {
       self.imglike[item] = '../images/afterlike.png'
     },
     leadcontent(e) {
-      console.log(e.currentTarget.dataset.index)
+      console.log(e, 'e')
+      console.log(e.currentTarget.dataset.index, 'e...index')
       let serial = e.currentTarget.dataset.index
       wepy.navigateTo({
         url: `./leadcontent?index=${serial}`
       })
     }
-    // author() {
-    //   wepy.navigateTo({
-    //     url: './'
-    //   })
-    // }
   }
 
   onLoad() {
     let self = this
-    console.log(content.length)
-    console.log(self.imglike)
-    for (var index = 0; index < content.length; index++) {
+    wepy.request({
+      url: 'http://127.0.0.1:7001/leadselect',
+      method: 'POST',
+      success(res) {
+        console.log(res.data, 'res.data')
+        self.lead = res.data
+      }
+    })
+    for (var index = 0; index < self.lead.length; index++) {
       self.imglike[index] = '../images/thumbsup.png'
       self.color[index] = '#bfbfbf'
     }

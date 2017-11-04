@@ -1,52 +1,23 @@
 
-<view>
-  <view class="global"  wx:if="{{title.length}}">
-    <view style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;">
-      <view bindtap="writenew">写</view>
-      <view>
+<view class="global">
+  <view class="line"/>
+
+    <view  wx:if="{{review == ''}}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 5%;">
+      <view style="display: flex; flex-direction: column; justify-content: center; width: 100%;">
         <image style="height: 8rem; width: 6rem; margin: 25% 0 10% 0" scr="{{noReview}}"/>
-        <text style="font-size: .8rem; color: #e6e6e6;">还没有发表过书评唷</text>
+        <text style="font-size: .8rem; color: #e6e6e6;">还没发表过书评唷</text>
       </view>
     </view> 
-  </view>
 
-  <view class="global"  wx:else>
-    <block wx:for="{{review}}" wx:for-index="index" wx:for-item="getinfo" wx:key="index">
-      
-<view class="global">
-  <view class="card contentcolumn" style="margin-top: 1px;">
-
-      <view class="row authorview margin">
-        <image class="authorAvator" src="{{getinfo.avatarUrl}}"/>
-        <text style="font-size:15px;">{{getinfo.authorName}}</text>
-      </view>
-
-      <view class="columncenter margin">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{getinfo.icon}}"/>
-      </view>
-
-      <view class="margin">
-        <text class="label" style="color: white;">{{getinfo.label}}</text>
-        <text class="text">{{getinfo.title}}</text>
-      </view>
-
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;">{{getinfo.text}}</text>
-
-      <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
-        <view class="row" style="color: #bfbfbf;">
-          <view class="bottomfont">{{getinfo.tapnumber}}点击</view>
-          <view class="bottomfont">{{getinfo.relevant}}</view>
+    <view style="width: 100%"  wx:else>
+      <view wx:for="{{review}}" wx:key="index" style="display: flex; flex-direction: column; justify-content: flex-start; margin: 5%;">
+        <view style="display: flex; flex-direction: row; justify-content: space-between;">
+          <text style="">{{item.title}}</text>
+          <view style="font-size: .7rem; color: #a6a6a6;">{{create_at}}</view>
         </view>
-        <view class="row flexend bottomfont" bindtap="$leadtable$like" data-com-index="{{index}}">
-          <view class="bottomfont" style="color:{{getinfo.color[$leadtable$index]}}">{{getinfo.like}}</view>
-          <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{getinfo.color[$leadtable$index]}};" src="{{getinfo.imglike[$leadtable$index]}}"/>
-        </view>
+        <text style="font-size: .8rem; color: #d6d6d6;">{{item.content}}</text>
+        <view class="underline"/>
       </view>
-
-  </view>
-</view>
-
-    </block>
+    </view>    
     <view bindtap="writenew">写</view>
-  </view>
 </view>

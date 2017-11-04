@@ -28,7 +28,8 @@ export default class extends wepy.app {
       'pages/writeReview',
       'pages/bookdetail',
       'pages/leadcontent',
-      'pages/review'
+      'pages/review',
+      'pages/mybooks'
     ],
     window: {
       backgroundTextStyle: 'dack',

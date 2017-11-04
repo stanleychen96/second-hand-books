@@ -3,23 +3,23 @@
   <view class="card contentcolumn" style="margin-top: 1px;"  wx:for="{{lead}}" wx:key="index" id="{{index}}" data-index="{{index}}">
 
       <view class="row authorview margin" bindtap="author">
-        <image class="authorAvator" src="{{item.avatarUrl}}"/>
+        <image class="authorAvator" src="{{item.icon}}"/>
         <text style="font-size:15px;">{{item.authorName}}</text>
       </view>
 
-      <view class="columncenter margin" bindtap="leadcontent">
-        <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.icon}}"/>
+      <view class="columncenter margin" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">
+        <image class="imgsize" style="border-radius: 0.3rem;" src="{{item.img}}"/>
       </view>
 
       <view class="margin">
         <text class="label" style="color: white;">{{item.label}}</text>
-        <text class="text" bindtap="leadcontent">{{item.title}}</text>
+        <text class="text" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" bindtap="leadcontent">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.text}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
-        <view class="row" style="color: #bfbfbf;" bindtap="leadcontent">
+        <view class="row" style="color: #bfbfbf;" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">
           <view class="bottomfont">{{item.tapnumber}}点击</view>
           <view class="bottomfont">·{{item.relevant}}</view>
         </view>

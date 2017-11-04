@@ -1,18 +1,18 @@
 
 <view class="global">
   <view style="padding: 5%;">
-    <text style="flex-wrap: wrap;">{{title}}</text>
+    <text style="flex-wrap: wrap; color: black;">{{title}}</text>
     <view style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;margin: 2.5% 0;">
       <view style="display: flex; flex-direction: row; width: 50%;">
-        <image scr="{{avatarUrl}}" style="height: 1.5rem; width: 1.5rem; margin-right:5%;"/>
+        <image src="{{avatarUrl}}" style="height: 1.5rem; width: 1.5rem; margin-right:5%;"/>
         <view style="display: flex; flex-direction: column; ">
-          <text style="font-size: .7rem;">{{authorName}}</text>
+          <text style="font-size: .7rem;">{{nickname}}</text>
           <text style="font-size: .65rem;color: #e6e6e6;">{{signature}}</text>
         </view>
       </view>
-      <image style="width: 10%; height: 1.2rem;" scr="{{attention}}"/>
+      <image style="width: 10%; height: 1.2rem;" src="{{attention}}"/>
     </view>
-    <image scr="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" bindtap="attent"/>
+    <image src="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" bindtap="attent"/>
     <text style="font-size: .8rem;">{{text}}</text>
   </view>
 </view>

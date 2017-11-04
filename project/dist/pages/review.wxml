@@ -9,6 +9,7 @@
     <view>
       <textarea class="margin" style="font-size: 0.8rem;" placeholder="正文" name="content"/>
     </view>
+    <view/>
     <view>
       <button style="margin" formType="submit">发布</button>
     </view>
