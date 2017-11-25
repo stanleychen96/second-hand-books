@@ -12,7 +12,7 @@
       </view>
       <image style="width: 10%; height: 1.2rem;" src="{{attention}}"/>
     </view>
-    <image src="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" bindtap="attent"/>
+    <image src="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;"/>
     <text style="font-size: .8rem;">{{text}}</text>
   </view>
 </view>

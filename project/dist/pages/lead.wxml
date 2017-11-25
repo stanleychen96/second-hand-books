@@ -4,7 +4,7 @@
 
       <view class="row authorview margin" bindtap="author">
         <image class="authorAvator" src="{{item.icon}}"/>
-        <text style="font-size:15px;">{{item.authorName}}</text>
+        <text style="font-size:15px;">{{item.nickname}}</text>
       </view>
 
       <view class="columncenter margin" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">
@@ -16,7 +16,7 @@
         <text class="text" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.title}}</text>
       </view>
 
-      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.text}}</text>
+      <text class="margin textcontent" style="font-size: 17px; color: #8a8a8a;" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">{{item.content}}</text>
 
       <view class="row margin" style="justify-content: space-between; margin-bottom: 2.5%;">
         <view class="row" style="color: #bfbfbf;" bindtap="leadcontent" id="{{index}}" data-index="{{index}}">
@@ -24,7 +24,7 @@
           <view class="bottomfont">·{{item.relevant}}</view>
         </view>
         <view class="row flexend bottomfont" bindtap="like" data-index="{{index}}">
-          <view class="bottomfont" style="color:{{color[index]}}">{{item.like}}</view>
+          <view class="bottomfont" style="color:{{color[index]}}">{{item.likenumber}}</view>
           <image style="margin-left: 0.4rem; height: 0.7rem; width: 0.7rem; color:{{color[index]}};" src="{{imglike[index]}}"/>
         </view>
       </view>

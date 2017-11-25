@@ -19,7 +19,7 @@ module.exports = app => {
         table.string('nickname').notNullable().defaultTo('');
         table.integer('readtime').notNullable().defaultTo(0);
         table.string('icon').notNullable().defaultTo('');
-        table.integer('shell').notNullable().defaultTo('0');
+        table.integer('shell').notNullable().defaultTo(0);
         // table.string('label').notNullable().defaultTo('');
         table.timestamp('create_at').defaultTo(knex.fn.now());
         table.charset('utf8');
@@ -39,10 +39,11 @@ module.exports = app => {
         desk.string('img').notNullable().defaultTo('');
         desk.text('title').notNullable().defaultTo('');
         desk.text('content').notNullable().defaultTo('');
-        desk.integer('tapnumble').notNullable().defaultTo('0');
-        desk.integer('likenumber').notNullable().defaultTo('0');
+        desk.integer('tapnumber').notNullable().defaultTo(0);
+        desk.integer('likenumber').notNullable().defaultTo(0);
         desk.string('icon').notNullable().defaultTo('');
         desk.string('nickname').notNullable().defaultTo('');
+        desk.boolean('liketap').notNullable().defaultTo(false);
         // desk.string('label').notNullable.defaultTo('');
         // desk.string('relvant').notNullable().defaultTo('');
         desk.timestamp('create_at').defaultTo(knex.fn.now());
@@ -59,14 +60,14 @@ module.exports = app => {
     if (havesisters.length === 0) {
       const userid = knex.schema.createTableIfNotExists('book', function(level) {
         level.increments();
-        level.integer('readnumble').notNullable().defaultTo('0');
-        level.integer('tapnumble').notNullable().defaultTo('0');
+        level.integer('readnumber').notNullable().defaultTo(0);
+        level.integer('tapnumber').notNullable().defaultTo(0);
         level.string('bookimg').notNullable().defaultTo('');
-        level.text('booktitle').notNullable().defaultTo('0');
-        level.string('author').notNullable().defaultTo('0');
+        level.text('booktitle').notNullable().defaultTo(0);
+        level.string('author').notNullable().defaultTo(0);
         level.string('nickname').notNullable().defaultTo('');
         // level.string('classify').notNullable().defaultTo('0');
-        // level.string('source').notNullable().defaultTo('0');
+        // level.string('source').notNullable().defaultTo(0);
         // level.dateTime('dateTime').notNullable().defaultTo('2018-09-09 09:09:09.001001');
         level.timestamp('create_at').defaultTo(knex.fn.now());
         level.charset('utf8');

@@ -12,10 +12,10 @@ module.exports = app => {
       return true;
     }
 
-    * get(req) {
+    * gettapid(r) {
       let res;
       try {
-        res = yield app.mysql.get('bookreview', req);
+        res = yield app.mysql.get('bookreview', r);
       } catch (e) {
         this.ctx.logger.error(e);
         return false;
@@ -75,7 +75,15 @@ module.exports = app => {
       }
       return true;
     }
-
+    * updatelikenumber(s) {
+      try {
+        yield app.mysql.update('bookreview', s);
+      } catch (q) {
+        this.ctx.logger.error(q);
+        return false;
+      }
+      return true;
+    }
   }
   return Bookreview;
 };

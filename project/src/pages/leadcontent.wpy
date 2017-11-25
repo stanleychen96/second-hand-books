@@ -33,7 +33,7 @@
       </view>
       <image style="width: 10%; height: 1.2rem;" src="{{attention}}"></image>
     </view>
-    <image src="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;" @tap="attent"></image>
+    <image src="{{img}}" mode="widthFix" style="width: 100%; margin: 5% 0;"></image>
     <text style="font-size: .8rem;">{{text}}</text>
   </view>
 </view>
@@ -56,17 +56,12 @@ export default class Index extends wepy.page {
     signature: '生活哲学探寻者'
   }
   methods = {
-    // attent(e) {
-    //   wepy.request({
-    //     url: ''
-    //   })
-    // }
   }
 
   onLoad(option) {
     let self = this
     self.index = option.index
-    console.log(option.index, 'option')
+    console.log(option.index, 'option.index')
     wepy.request({
       url: 'http://127.0.0.1:7001/lead',
       method: 'POST',
@@ -77,11 +72,14 @@ export default class Index extends wepy.page {
         self.nickname = res.data[self.index].nickname
         self.avatarUrl = res.data[self.index].icon
         self.text = res.data[self.index].content
+        console.log(res.data[self.index].img)
+        self.img = res.data[self.index].img
         self.setData({
           title: res.data[self.index].title,
           nickname: res.data[self.index].nickname,
           avatarUrl: res.data[self.index].icon,
-          text: res.data[self.index].content
+          text: res.data[self.index].content,
+          img: res.data[self.index].img
         })
       }
     })

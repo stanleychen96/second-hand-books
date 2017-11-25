@@ -11,4 +11,11 @@ module.exports = app => {
 
   app.post('/selectbook', 'book.select');
   app.post('/addbook', 'book.create');
+
+  app.post('/updateimg', 'writereview.update');
+
+  app.post('/gettapnum', 'lead.gettapnumber');
+  app.post('/updatetapnum', 'lead.updatetapnumber');
+  app.post('/updatelikenum', 'lead.updatelikenumber');
+  app.post('/gettapid', 'lead.gettapid');
 };
